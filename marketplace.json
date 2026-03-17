@@ -1,0 +1,113 @@
+{
+  "name": "bycrawl-blog",
+  "description": "AI-powered blog creation and optimization skill with 15 sub-skills, 5-category 100-point scoring, and 4 specialized agents. Dual-optimized for Google rankings (December 2025 Core Update, E-E-A-T) and AI citations (GEO/AEO). Powered by ByCrawl social intelligence.",
+  "version": "1.3.1",
+  "owner": "signalsurf-ai",
+  "author": "signalsurf.ai",
+  "license": "MIT",
+  "repository": "https://github.com/Signalsurf-ai/bycrawl-blog",
+  "homepage": "https://github.com/Signalsurf-ai/bycrawl-blog",
+  "keywords": [
+    "blog",
+    "seo",
+    "content",
+    "writing",
+    "ai-citations",
+    "geo",
+    "aeo",
+    "e-e-a-t",
+    "bycrawl"
+  ],
+  "skills": [
+    {
+      "name": "blog",
+      "path": "skills/blog",
+      "description": "Full-lifecycle blog engine with 12 commands, 12 content templates, 5-category 100-point scoring, and 4 specialized agents. Optimized for Google rankings and AI citations.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-write",
+      "path": "skills/blog-write",
+      "description": "Write new blog articles from scratch optimized for Google rankings and AI citations with template selection, answer-first formatting, TL;DR box, sourced statistics, and SVG chart generation.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-rewrite",
+      "path": "skills/blog-rewrite",
+      "description": "Rewrite and optimize existing blog posts for Google rankings and AI citations by replacing fabricated statistics with sourced data and applying answer-first formatting.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-analyze",
+      "path": "skills/blog-analyze",
+      "description": "Audit and score blog posts on a 5-category 100-point scoring system covering content quality, SEO optimization, E-E-A-T signals, and AI citation readiness.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-brief",
+      "path": "skills/blog-brief",
+      "description": "Generate detailed content briefs for blog posts with target keywords, competitive analysis, recommended statistics, and multi-channel distribution plans.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-calendar",
+      "path": "skills/blog-calendar",
+      "description": "Generate editorial calendars for blogs with topic clusters, publishing schedules, content decay detection, and freshness update plans.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-strategy",
+      "path": "skills/blog-strategy",
+      "description": "Blog strategy development including topic cluster architecture, audience mapping, competitive analysis, and AI citation surface strategy.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-outline",
+      "path": "skills/blog-outline",
+      "description": "SERP-informed outline generation with H2/H3 heading hierarchy, competitive content gap analysis, and section word count targets.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-seo-check",
+      "path": "skills/blog-seo-check",
+      "description": "Post-writing SEO validation with pass/fail checklist covering title tags, meta descriptions, heading hierarchy, and internal/external links.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-schema",
+      "path": "skills/blog-schema",
+      "description": "Generate complete JSON-LD schema markup for blog posts including BlogPosting, Person, Organization, and FAQPage schemas.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-repurpose",
+      "path": "skills/blog-repurpose",
+      "description": "Repurpose blog posts for social media, email, YouTube, Reddit, and LinkedIn with platform-specific adaptations.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-geo",
+      "path": "skills/blog-geo",
+      "description": "AI citation optimization audit scoring blog posts for ChatGPT, Perplexity, and Google AI Overview citability.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-audit",
+      "path": "skills/blog-audit",
+      "description": "Full-site blog health assessment scanning all blog files for quality scores, orphan pages, topic cannibalization, and stale content.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-humanize",
+      "path": "skills/blog-humanize",
+      "description": "Remove signs of AI-generated writing from blog posts by detecting and fixing 24 AI writing patterns.",
+      "user-invocable": true
+    },
+    {
+      "name": "blog-chart",
+      "path": "skills/blog-chart",
+      "description": "Generate dark-mode-compatible inline SVG data visualization charts supporting multiple chart types with accessible markup.",
+      "user-invocable": false
+    }
+  ]
+}

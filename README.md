@@ -5,7 +5,7 @@
 ![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-blueviolet)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 ![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue)
-![Sub-Skills](https://img.shields.io/badge/Sub--Skills-13-orange)
+![Sub-Skills](https://img.shields.io/badge/Sub--Skills-15-orange)
 ![ByCrawl MCP](https://img.shields.io/badge/ByCrawl-MCP_Powered-ff6b35)
 
 **The most comprehensive blog creation skill for Claude Code — powered by [ByCrawl](https://bycrawl.com) social intelligence.**
@@ -22,24 +22,36 @@ Strategy, briefs, calendars, writing, optimization, schema, repurposing, and ful
 ### Install from Claude Code Plugin Marketplace (Recommended)
 
 ```bash
-/plugin marketplace add claude-blog
+/plugin install bycrawl-blog@signalsurf-ai
 ```
 
-That's it. Claude Code automatically downloads the skill, registers all 13 sub-skills, and makes `/blog` commands available immediately.
+or
+
+```bash
+/plugin marketplace add signalsurf-ai/bycrawl-blog
+```
+
+That's it. Claude Code automatically downloads the skill, registers all 15 sub-skills, and makes `/blog` commands available immediately.
+
+### Update
+
+```bash
+/plugin marketplace update bycrawl-blog@bycrawl-blog
+```
 
 ### Install via shell script
 
 **One-command install (Unix/macOS):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Signalsurf-ai/bycrawl-blog/main/install.sh | bash
 ```
 
 **Or clone and install manually:**
 
 ```bash
-git clone https://github.com/AgriciDaniel/claude-blog.git
-cd claude-blog
+git clone https://github.com/Signalsurf-ai/bycrawl-blog.git
+cd bycrawl-blog
 chmod +x install.sh && ./install.sh
 ```
 
@@ -224,7 +236,7 @@ claude-blog/
 
 **If installed via marketplace:**
 ```bash
-/plugin marketplace remove claude-blog
+/plugin uninstall bycrawl-blog
 ```
 
 **If installed via shell script:**
@@ -308,4 +320,4 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-Built by [AgriciDaniel](https://github.com/AgriciDaniel) with Claude Code. Social intelligence powered by [ByCrawl](https://bycrawl.com).
+Built by [signalsurf.ai](https://github.com/Signalsurf-ai) with Claude Code. Social intelligence powered by [ByCrawl](https://bycrawl.com).

@@ -1,7 +1,6 @@
 # Social & SERP Research — ByCrawl MCP + Playwright Patterns
 
-Reference for bycrawl API call patterns and Playwright scraping approaches used
-by the blog-write skill. Keeps implementation details out of SKILL.md.
+Reference for bycrawl API call patterns and Playwright scraping used by blog-write.
 
 ---
 
@@ -126,18 +125,57 @@ by the blog-write skill. Keeps implementation details out of SKILL.md.
 
 Inline social proof reinforces E-E-A-T signals without replacing tier 1-3 sources.
 
-| Platform | Attribution Template |
-|----------|---------------------|
-| Reddit   | "A discussion in r/{subreddit} with {upvotes} upvotes…" |
-| X        | "As @{handle} noted in a post with {likes} likes…" |
-| YouTube  | "In a video with {views} views, {channel} demonstrated…" |
-| TikTok   | "A TikTok by @{creator} with {views} views showed…" |
+### 3a. ByCrawl Response Field Mapping
+
+Fields available per platform for attribution and embeds:
+
+| Platform | Engagement | Creator | Content | ID/URL | Verified |
+|----------|-----------|---------|---------|--------|----------|
+| YouTube  | `viewCount`, `likeCount`, `commentCount` | `channelTitle` | `title`, `description` | `id`, `publishedAt` | — |
+| X        | `likeCount`, `retweetCount`, `viewCount` | `user.username`, `user.name` | `text` | `id`, `url`, `createdAt` | `user.isVerified`, `isBlueVerified` |
+| Reddit   | `score`, `upvoteRatio`, `commentCount` | `author` | `title`, `selftext` | `id`, `url`, `permalink` | — |
+| TikTok   | `views`, `likes`, `comments`, `shares` | `author` | `title`, `description` | `id`, `url`, `createdAt` | — |
+| Threads  | `stats.likes`, `stats.replies`, `stats.reposts` | `user.username` | `text` | `id`, `createdAt` | `user.isVerified` |
+
+### 3b. Text Attribution (always included)
+
+| Platform | Attribution Template | ByCrawl Fields Used |
+|----------|---------------------|---------------------|
+| Reddit   | "A discussion in r/{subreddit} with {score} upvotes…" | `subreddit`, `score` |
+| X        | "As @{user.username} noted in a post with {likeCount} likes…" | `user.username`, `likeCount` |
+| YouTube  | "In a video with {viewCount} views, {channelTitle} demonstrated…" | `channelTitle`, `viewCount` |
+| TikTok   | "A TikTok by @{author} with {views} views showed…" | `author`, `views` |
+
+### 3c. Rich Social Embeds (auto-embedded when quality gate passes)
+
+Embed the actual post/video when it passes the relevance gate. Creates
+backlink-worthy content and increases dwell time.
+
+**Relevance gate — ALL conditions must be met:**
+1. **Topical match** — Directly explains or validates the article's core topic
+2. **High engagement** — Top 10% of results by engagement metric
+3. **Accuracy** — Aligns with article's tier 1-3 sourced data
+4. **Recency** — Within 12 months (or evergreen how-to content)
+5. **Creator authority** — Verified (`isVerified`/`isBlueVerified` for X, `user.isVerified` for Threads) or recognized domain expert
+
+**Target:** 1-2 rich embeds per article (YouTube and/or X preferred).
+
+#### YouTube: `<iframe src="https://www.youtube.com/embed/{id}" loading="lazy">` (use `id` from response)
+#### X: `<blockquote class="twitter-tweet"><a href="{url}">` (use `url` from response, or build from `user.username` + `id`)
+
+Add X script once per page: `<script async src="https://platform.twitter.com/widgets.js">`
+
+Wrap in `<figure class="social-embed">` with `<figcaption>` showing engagement + relevance.
+For MDX: use `frameBorder`, `allowFullScreen`, `className`. For WordPress: paste
+URL on its own line (oEmbed auto-renders). For Hugo: requires `unsafe = true`.
 
 **Rules:**
 - Always attribute with platform name + engagement metric
 - Social proof reinforces — never replaces — tier 1-3 sources
-- Target 2-3 social proof citations per article
+- Target 2-3 text citations + 1-2 rich embeds per article
 - Prefer high-engagement posts (top 10% of results)
+- Each text citation earns `[SOCIAL DATA]` information gain credit
+- Each rich embed earns `[SOCIAL EMBED]` information gain credit
 
 ---
 

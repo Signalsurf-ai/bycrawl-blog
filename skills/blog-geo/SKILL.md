@@ -119,7 +119,27 @@ Check for AI-extractable content patterns:
 - 1 pt: 1-2 elements present
 - 0 pts: None present
 
-### Step 6: AI Crawler Accessibility (2 pts)
+### Step 6: Social Signal Density (3 pts)
+
+Check for social proof that boosts AI citation likelihood (Perplexity favors
+Reddit at 6.6% of citations; community-validated content ranks higher across
+all AI platforms):
+
+| Check | Criteria |
+|-------|----------|
+| Social proof count | At least 2-3 `[SOCIAL DATA]` text citations + 1-2 `[SOCIAL EMBED]` rich embeds |
+| Platform diversity | Social proof from 2+ platforms (Reddit, X, YouTube, TikTok, Threads) |
+| Attribution quality | Each embed includes platform name + engagement metric + quote/finding |
+| Reinforcement rule | Social proof supports (not replaces) tier 1-3 research sources |
+
+**Scoring:**
+- 3 pts: All four criteria met (3+ social embeds, 2+ platforms, proper attribution, reinforces sources)
+- 2 pts: 2-3 social embeds present but missing platform diversity or attribution quality
+- 1 pt: 1 social embed present or social data mentioned without engagement metrics
+- 0 pts: No social proof embedded
+
+### Step 7: AI Crawler Accessibility (2 pts)
+
 
 Check technical requirements for AI crawler indexing:
 
@@ -135,7 +155,7 @@ Check technical requirements for AI crawler indexing:
 - 1 pt: Most criteria met but one issue
 - 0 pts: Multiple issues blocking AI crawlers
 
-### Step 7: Platform-Specific Analysis
+### Step 8: Platform-Specific Analysis
 
 Evaluate the post for each AI platform's citation preferences:
 
@@ -162,7 +182,7 @@ For each platform, provide:
 - Specific improvements to increase citation likelihood
 - Content format recommendations
 
-### Step 8: Generate Citation Capsules
+### Step 9: Generate Citation Capsules
 
 For each H2 section in the post, write a citation capsule:
 
@@ -181,18 +201,19 @@ that reinforces the claim].
 Generate one capsule per H2 section. Label each with the section heading
 it belongs under.
 
-### Step 9: Calculate AI Citation Readiness Score (0-100)
+### Step 10: Calculate AI Citation Readiness Score (0-100)
 
-Map the 15-point subcategory scores to a 0-100 display score:
+Map the 18-point subcategory scores to a 0-100 display score:
 
 | Category | Raw Points | Display Weight | Max Display Score |
 |----------|-----------|----------------|-------------------|
-| Passage-Level Citability | /4 | x6.75 | 27 |
-| Q&A Formatting | /3 | x6.67 | 20 |
-| Entity Clarity | /3 | x6.67 | 20 |
-| Content Structure | /3 | x6.67 | 20 |
-| AI Crawler Accessibility | /2 | x6.5 | 13 |
-| **Total** | **/15** | | **100** |
+| Passage-Level Citability | /4 | x5.75 | 23 |
+| Q&A Formatting | /3 | x5.67 | 17 |
+| Entity Clarity | /3 | x5.67 | 17 |
+| Content Structure | /3 | x5.67 | 17 |
+| Social Signal Density | /3 | x5.67 | 17 |
+| AI Crawler Accessibility | /2 | x4.5 | 9 |
+| **Total** | **/18** | | **100** |
 
 Rating thresholds:
 - 90-100: Excellent -- highly citable by AI systems
@@ -200,7 +221,7 @@ Rating thresholds:
 - 50-69: Needs Work -- significant gaps in citability
 - Below 50: Poor -- major restructuring needed
 
-### Step 10: Generate Report
+### Step 11: Generate Report
 
 Output the following report:
 
@@ -212,12 +233,13 @@ Output the following report:
 ### Score Breakdown
 | Category | Raw | Display | Max |
 |----------|-----|---------|-----|
-| Passage-Level Citability | X/4 | X | 27 |
-| Q&A Formatting | X/3 | X | 20 |
-| Entity Clarity | X/3 | X | 20 |
-| Content Structure | X/3 | X | 20 |
-| AI Crawler Accessibility | X/2 | X | 13 |
-| **Total** | **X/15** | **X** | **100** |
+| Passage-Level Citability | X/4 | X | 23 |
+| Q&A Formatting | X/3 | X | 17 |
+| Entity Clarity | X/3 | X | 17 |
+| Content Structure | X/3 | X | 17 |
+| Social Signal Density | X/3 | X | 17 |
+| AI Crawler Accessibility | X/2 | X | 9 |
+| **Total** | **X/18** | **X** | **100** |
 
 ### Per-Section Citability Analysis
 | Section (H2) | Word Count | Self-Contained | Claim+Evidence | Citable |

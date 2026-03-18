@@ -47,11 +47,9 @@ follows the 6 pillars of dual optimization (Google rankings + AI citations).
    - Platform/format (MDX, markdown, HTML — auto-detect if in a project)
 2. **If a brief exists** — Load it and skip to Phase 1.5
 
-### Phase 1.3: Social Demand Validation (Optional)
+### Phase 1.3: Social Demand Validation
 
-> "Would you like me to validate this topic with live social signals from bycrawl? (yes/no)"
-
-If yes, run a cross-platform volume check (see `references/social-serp-research.md`
+Run a cross-platform volume check automatically (see `references/social-serp-research.md`
 § Social Keyword Discovery):
 
 1. **Cross-platform search** — Query Reddit, X, TikTok, YouTube, Threads for the keyword
@@ -65,8 +63,6 @@ If yes, run a cross-platform volume check (see `references/social-serp-research.
    - Emerging terms in "Latest" but not "Top" (newly trending)
 4. **Feed into Phase 1.5** — Social signals help select the right template
    (e.g., high question volume → `faq-knowledge`, viral debate → `thought-leadership`)
-
-If no, skip to Phase 1.5.
 
 ### Phase 1.5: Template Selection
 
@@ -123,11 +119,9 @@ Spawn a `blog-researcher` agent (or do inline research with WebSearch):
    - Select diverse chart types (see `references/visual-media.md`)
    - Map data points to chart formats
 
-#### ByCrawl Social Research (Optional)
+#### ByCrawl Social Research
 
-> "Would you like me to enrich research with live social data from bycrawl? (~20-30 API calls)"
-
-If yes, run these enrichments (details in `references/social-serp-research.md`):
+Run these enrichments automatically (details in `references/social-serp-research.md`):
 
 5. **Content gap analysis** — Search top-performing content across Reddit, X,
    TikTok, YouTube to identify what's saturated vs. underserved
@@ -448,17 +442,25 @@ Answer with statistic and source attribution (40-60 words).
 
 #### 5n. Social Proof Embedding (if bycrawl data available)
 
-When bycrawl research was run in Phase 2, embed real social evidence:
+Embed real social evidence from Phase 2 research:
 
-- **Reddit**: `A discussion in r/{subreddit} with {upvotes} upvotes highlighted: "{quote}"`
-- **X/Twitter**: `According to @{handle}, whose post received {likes} likes: "{quote}"`
-- **YouTube/TikTok**: `In a video with {views} views, {channel} demonstrated that {finding}`
+**Text citations** (2-3 per article, using ByCrawl response fields):
+- **Reddit**: `A discussion in r/{subreddit} with {score} upvotes highlighted: "{quote}"`
+- **X/Twitter**: `According to @{user.username}, whose post received {likeCount} likes: "{quote}"`
+- **YouTube**: `In a video with {viewCount} views, {channelTitle} demonstrated that {finding}`
+- **TikTok**: `A TikTok by @{author} with {views} views showed…`
+
+**Rich embeds** (1-2 per article — YouTube iframe or X blockquote):
+When a social post passes the relevance gate (topical match + high engagement +
+accurate + recent + authoritative creator), embed the actual post/video directly.
+See `references/social-serp-research.md` § 3b for embed templates and the full
+relevance gate criteria. Adapt embed format to the detected platform (MDX, HTML,
+WordPress oEmbed, etc.).
 
 Rules:
 - Attribute with platform, engagement metric, and context
 - Social proof reinforces — never replaces — tier 1-3 research sources
-- Target 2-3 social proof embeddings per article
-- Each embedding earns `[SOCIAL DATA]` information gain credit
+- Text citations earn `[SOCIAL DATA]`, rich embeds earn `[SOCIAL EMBED]`
 - See `references/social-serp-research.md` § Social Proof Embedding Patterns
 
 ### Phase 6: Quality Check
@@ -495,10 +497,10 @@ Before delivering, verify:
 17. **Contractions** — Verify natural use of contractions ("it's", "we've", "don't", "isn't"). Formal AI prose avoids contractions; natural writing uses them.
 18. **Rhetorical questions** — Verify at least one rhetorical question every 200-300 words to break up declarative patterns.
 
-#### Social & SERP Validation (if enrichment was used)
+#### Social & SERP Validation
 19. **Social content gap addressed** — Article covers at least 1 content gap identified from bycrawl data
 20. **Audience language incorporated** — At least 3 pain point phrases or desire language from social comments woven into body
-21. **Social proof present** — At least 2 `[SOCIAL DATA]` markers with real engagement metrics
+21. **Social proof present** — At least 2 `[SOCIAL DATA]` markers + 1-2 `[SOCIAL EMBED]` rich embeds (YouTube/X) that pass the relevance gate
 22. **PAA coverage** — If PAA was extracted, at least 2 PAA questions addressed in H2s or FAQ
 23. **Keyword still active** — Run post-write validation via bycrawl (see `references/social-serp-research.md` § Post-Write Keyword Validation). Flag if volume dropped since Phase 1.3.
 24. **Google Trends alignment** — If Trends data was scraped, verify article doesn't focus on a declining interest curve
@@ -534,11 +536,12 @@ Present the completed article with a summary:
 - Word count: ~[N] words
 - Estimated reading time: [N] min
 
-### Social Intelligence (if bycrawl enrichment was used)
+### Social Intelligence
 - Platforms queried: [list — Reddit, X, TikTok, YouTube, Threads]
 - Content gaps identified: [N] ([brief descriptions])
 - Audience phrases incorporated: [N]
-- Social proof embeddings: [N] with [SOCIAL DATA] markers
+- Social proof text citations: [N] with [SOCIAL DATA] markers
+- Rich social embeds: [N] with [SOCIAL EMBED] markers (YouTube/X)
 - FAQ items sourced from comments: [N] of [total FAQ items]
 - Keyword social volume: [strong/moderate/weak]
 
@@ -558,7 +561,14 @@ Present the completed article with a summary:
 - Review and customize for your brand voice
 - Resolve [INTERNAL-LINK] placeholders with actual URLs
 - Add internal links to your existing content
-- Run `/blog analyze <file>` to verify quality score
-- If bycrawl was used: verify social quotes are still current
 - If Trends data was used: schedule re-check in 3 months for freshness update
 ```
+
+### Phase 8: Auto-Analyze
+
+Run `blog-analyze` on the written file automatically. Apply quality gates:
+- Score < 70: Fix critical/high issues and re-verify
+- AI probability > 50%: Humanize flagged passages
+- Social Signal Density = 0: Add 2+ social proof embeddings from Phase 2 data
+
+Present the quality report inline after the delivery summary.

@@ -16,7 +16,7 @@
         "source": "url",
         "url": "https://github.com/Signalsurf-ai/bycrawl-blog.git"
       },
-      "strict": false,
+      "strict": true,
       "skills": "./skills/"
     }
   ]

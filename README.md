@@ -31,7 +31,8 @@ That's it. Claude Code automatically downloads the skill, registers all 15 sub-s
 ### Update
 
 ```bash
-/plugin marketplace update bycrawl-blog@bycrawl-blog
+/plugin marketplace update bycrawl-blog
+/plugin install bycrawl-blog@bycrawl-blog
 ```
 
 ### Install via shell script

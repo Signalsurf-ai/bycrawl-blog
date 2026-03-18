@@ -98,11 +98,9 @@ Wait for user approval before proceeding.
    - Identify data suitable for visualization
    - Select diverse chart types
 
-#### ByCrawl Social Enrichment (Optional)
+#### ByCrawl Social Enrichment
 
-> "Would you like me to enrich this rewrite with live social data from bycrawl? (~15-20 API calls)"
-
-If yes, run these enrichments (see `references/social-serp-research.md`):
+Run these enrichments automatically (see `references/social-serp-research.md`):
 
 5. **Content gap analysis** — Search top-performing content on Reddit, X,
    TikTok, YouTube to find what's missing from the current post
@@ -273,19 +271,24 @@ After rewriting, verify all quality gates pass:
 17. AI content estimate reduced from audit baseline
 18. Score improved across all 5 categories vs Phase 1 audit
 
-#### 4n. Social Proof Embedding (if bycrawl data available)
+#### 4n. Social Proof Embedding
 
-When bycrawl research was run in Phase 2, embed real social evidence:
+Embed real social evidence from Phase 2 research:
 
-- **Reddit**: `A discussion in r/{subreddit} with {upvotes} upvotes highlighted: "{quote}"`
-- **X/Twitter**: `According to @{handle}, whose post received {likes} likes: "{quote}"`
-- **YouTube/TikTok**: `In a video with {views} views, {channel} demonstrated that {finding}`
+**Text citations** (2-3 per article, using ByCrawl response fields):
+- **Reddit**: `A discussion in r/{subreddit} with {score} upvotes highlighted: "{quote}"`
+- **X/Twitter**: `According to @{user.username}, whose post received {likeCount} likes: "{quote}"`
+- **YouTube**: `In a video with {viewCount} views, {channelTitle} demonstrated that {finding}`
+- **TikTok**: `A TikTok by @{author} with {views} views showed…`
+
+**Rich embeds** (1-2 per article — YouTube iframe or X blockquote):
+When a social post passes the relevance gate (topical match + high engagement +
+accurate + recent + authoritative creator), embed the actual post/video directly.
+See `references/social-serp-research.md` § 3b for templates and gate criteria.
 
 Rules:
-- Attribute with platform, engagement metric, and context
 - Social proof reinforces — never replaces — tier 1-3 research sources
-- Target 2-3 social proof embeddings per rewrite
-- Each embedding earns `[SOCIAL DATA]` information gain credit
+- Text citations earn `[SOCIAL DATA]`, rich embeds earn `[SOCIAL EMBED]`
 
 ### Phase 6: Summary
 
@@ -335,7 +338,8 @@ Rules:
 ### Social Intelligence (if bycrawl enrichment was used)
 - Content gaps addressed: [N]
 - Audience language incorporated: [N] phrases
-- Social proof embeddings: [N] with [SOCIAL DATA] markers
+- Social proof text citations: [N] with [SOCIAL DATA] markers
+- Rich social embeds: [N] with [SOCIAL EMBED] markers (YouTube/X)
 - FAQ items sourced from comments: [N]
 - Keyword social volume: [strong/moderate/weak]
 

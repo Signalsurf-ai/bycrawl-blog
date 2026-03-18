@@ -22,13 +22,8 @@ Strategy, briefs, calendars, writing, optimization, schema, repurposing, and ful
 ### Install from Claude Code Plugin Marketplace (Recommended)
 
 ```bash
-/plugin install bycrawl-blog@signalsurf-ai
-```
-
-or
-
-```bash
 /plugin marketplace add signalsurf-ai/bycrawl-blog
+/plugin install bycrawl-blog@bycrawl-blog
 ```
 
 That's it. Claude Code automatically downloads the skill, registers all 15 sub-skills, and makes `/blog` commands available immediately.

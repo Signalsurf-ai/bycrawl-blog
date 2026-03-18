@@ -7,21 +7,5 @@
   },
   "homepage": "https://github.com/Signalsurf-ai/bycrawl-blog",
   "license": "MIT",
-  "skills": [
-    "./skills/blog",
-    "./skills/blog-write",
-    "./skills/blog-rewrite",
-    "./skills/blog-analyze",
-    "./skills/blog-brief",
-    "./skills/blog-calendar",
-    "./skills/blog-strategy",
-    "./skills/blog-outline",
-    "./skills/blog-seo-check",
-    "./skills/blog-schema",
-    "./skills/blog-repurpose",
-    "./skills/blog-geo",
-    "./skills/blog-audit",
-    "./skills/blog-humanize",
-    "./skills/blog-chart"
-  ]
+  "skills": "./skills/"
 }

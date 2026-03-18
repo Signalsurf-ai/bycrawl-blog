@@ -23,7 +23,7 @@ Strategy, briefs, calendars, writing, optimization, schema, repurposing, and ful
 
 ```bash
 /plugin marketplace add signalsurf-ai/bycrawl-blog
-/plugin install bycrawl-blog@bycrawl-blog
+/plugin install blog@bycrawl-blog
 ```
 
 That's it. Claude Code automatically downloads the skill, registers all 15 sub-skills, and makes `/blog` commands available immediately.
@@ -32,7 +32,7 @@ That's it. Claude Code automatically downloads the skill, registers all 15 sub-s
 
 ```bash
 /plugin marketplace update bycrawl-blog
-/plugin install bycrawl-blog@bycrawl-blog
+/plugin install blog@bycrawl-blog
 ```
 
 ### Install via shell script

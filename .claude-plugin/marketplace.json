@@ -10,30 +10,14 @@
   },
   "plugins": [
     {
-      "name": "bycrawl-blog",
+      "name": "blog",
       "description": "AI-powered blog creation and optimization skill with 15 sub-skills, 5-category 100-point scoring, and 4 specialized agents. Dual-optimized for Google rankings and AI citations.",
       "source": {
         "source": "url",
         "url": "https://github.com/Signalsurf-ai/bycrawl-blog.git"
       },
       "strict": false,
-      "skills": [
-        "./skills/blog",
-        "./skills/blog-write",
-        "./skills/blog-rewrite",
-        "./skills/blog-analyze",
-        "./skills/blog-brief",
-        "./skills/blog-calendar",
-        "./skills/blog-strategy",
-        "./skills/blog-outline",
-        "./skills/blog-seo-check",
-        "./skills/blog-schema",
-        "./skills/blog-repurpose",
-        "./skills/blog-geo",
-        "./skills/blog-audit",
-        "./skills/blog-humanize",
-        "./skills/blog-chart"
-      ]
+      "skills": "./skills/"
     }
   ]
 }

@@ -1,23 +1,30 @@
 {
   "name": "bycrawl-blog",
   "owner": {
-    "name": "Signalsurf AI",
-    "email": "support@signalsurf.ai"
-  },
-  "metadata": {
-    "description": "AI-powered blog creation and optimization skill with 15 sub-skills, 5-category 100-point scoring, and 4 specialized agents. Dual-optimized for Google rankings (December 2025 Core Update, E-E-A-T) and AI citations (GEO/AEO). Powered by ByCrawl social intelligence.",
-    "version": "1.3.1"
+    "name": "Signalsurf AI"
   },
   "plugins": [
     {
       "name": "blog",
+      "source": "./",
       "description": "AI-powered blog creation and optimization skill with 15 sub-skills, 5-category 100-point scoring, and 4 specialized agents. Dual-optimized for Google rankings and AI citations.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/Signalsurf-ai/bycrawl-blog.git"
-      },
-      "strict": true,
-      "skills": "./skills/"
+      "skills": [
+        "./skills/blog",
+        "./skills/blog-write",
+        "./skills/blog-rewrite",
+        "./skills/blog-analyze",
+        "./skills/blog-brief",
+        "./skills/blog-outline",
+        "./skills/blog-calendar",
+        "./skills/blog-strategy",
+        "./skills/blog-seo-check",
+        "./skills/blog-schema",
+        "./skills/blog-chart",
+        "./skills/blog-repurpose",
+        "./skills/blog-geo",
+        "./skills/blog-humanize",
+        "./skills/blog-audit"
+      ]
     }
   ]
 }

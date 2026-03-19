@@ -32,7 +32,6 @@ and AI citation platforms. Preserves the author's voice while applying the
 - `references/quality-scoring.md` — 5-category scoring (Content 30, SEO 25, E-E-A-T 15, Technical 15, AI Citation 15)
 - `references/eeat-signals.md` — Experience, expertise, authority, trust markers
 - `references/internal-linking.md` — Linking strategy and anchor text rules
-- `references/visual-media.md` — Image sourcing and chart styling
 - `references/social-serp-research.md` — ByCrawl API patterns for social intelligence
 
 ## Workflow
@@ -113,18 +112,7 @@ Run these enrichments automatically (see `references/social-serp-research.md`):
 
 Record findings in a social intelligence section of research notes.
 
-### Phase 3: Chart Generation (Built-In)
-
-When the post needs more visual elements, invoke the `blog-chart` sub-skill:
-
-1. Select chart type using the diversity rule (no repeated types per post)
-2. Pass: chart type, title, data values, source, platform format
-3. Embed the returned SVG directly within a `<figure>` wrapper
-4. Target 2-4 charts per 2,000-word post
-
-See `references/visual-media.md` for chart type selection and styling rules.
-
-### Phase 4: Content Rewrite
+### Phase 3: Content Rewrite
 
 Apply changes in this order:
 
@@ -140,7 +128,6 @@ Apply changes in this order:
 - Fix meta description: fact-dense, 150-160 chars, includes 1 statistic
 - Add `coverImage` + `coverImageAlt` + `ogImage` if missing
   - Search Pixabay/Unsplash/Pexels for wide hero image (1200x630)
-  - Or generate custom SVG cover via `blog-chart` (text-on-gradient with key stat)
 - Verify tags/categories are appropriate
 
 #### 4c. Apply Answer-First Formatting

@@ -74,8 +74,8 @@ Restart Claude Code after installation to activate.
 | `/blog repurpose <file>` | Repurpose for social, email, YouTube |
 | `/blog geo <file>` | AI citation readiness audit |
 | `/blog audit [directory]` | Full-site blog health assessment |
+| `/blog content-research <topic>` | Content gap analysis and idea mining via bycrawl |
 
-> **13 sub-skills total**: 12 user-facing commands above + `blog-chart` (internal SVG generation, invoked automatically by other commands).
 
 ## Features
 
@@ -114,7 +114,7 @@ ByCrawl is integrated into **11 of 13 sub-skills** — the entire content lifecy
 | `/blog repurpose` | Platform-specific intelligence (Reddit, X, YouTube, LinkedIn) | ~8-12 |
 | `/blog geo` | Social brand signals for AI citation audits | ~4-6 |
 
-Skills without ByCrawl (structural — no social data needed): `blog-chart`, `blog-schema`, `blog-seo-check`, `blog-humanize`
+Skills without ByCrawl (structural — no social data needed): `blog-schema`, `blog-seo-check`, `blog-humanize`
 
 #### How ByCrawl Enriches Each Phase
 
@@ -199,7 +199,7 @@ claude-blog/
 │   ├── blog-repurpose/SKILL.md
 │   ├── blog-geo/SKILL.md
 │   ├── blog-audit/SKILL.md
-│   └── blog-chart/SKILL.md            # Internal: SVG chart generation
+│   └── blog-content-research/SKILL.md
 ├── agents/                             # 4 specialized agents
 │   ├── blog-researcher.md
 │   ├── blog-writer.md

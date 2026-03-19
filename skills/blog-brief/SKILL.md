@@ -162,7 +162,6 @@ what the searcher wants]
 - **Format**: [Markdown/MDX/HTML]
 - **H2 sections**: [6-8]
 - **Images**: 3-5 from Pixabay/Unsplash
-- **Charts**: 2-4 via built-in blog-chart (diverse types)
 - **FAQ items**: 3-5
 
 ## Recommended Title
@@ -246,15 +245,6 @@ claim that can stand alone when quoted.
 | Photo cover | [Pixabay/Unsplash/Pexels search terms for wide hero image] |
 | Generated SVG | [Text-on-gradient concept with key stat, if data-heavy topic] |
 | Dimensions | 1200x630 (OG-compatible) |
-
-## Visual Element Plan
-
-| # | Type | Data | Section |
-|---|------|------|---------|
-| 1 | [Bar chart] | [Data description] | H2: Section 2 |
-| 2 | [Donut chart] | [Data description] | H2: Section 4 |
-| 3 | [Image: Pixabay] | [Search terms] | H2: Section 1 |
-| 4 | [Image: Pixabay] | [Search terms] | H2: Section 3 |
 
 ## Social Intelligence (if bycrawl enrichment was used)
 - **Demand signal**: [strong/moderate/weak] across [N] platforms

@@ -45,7 +45,7 @@ main() {
     mkdir -p "${SKILL_DIR}/blog/references"
     mkdir -p "${SKILL_DIR}/blog/templates"
     mkdir -p "${SKILL_DIR}/blog/scripts"
-    for skill in blog-write blog-rewrite blog-analyze blog-brief blog-calendar blog-strategy blog-outline blog-seo-check blog-schema blog-repurpose blog-geo blog-audit blog-chart; do
+    for skill in blog-write blog-rewrite blog-analyze blog-brief blog-calendar blog-strategy blog-outline blog-seo-check blog-schema blog-repurpose blog-geo blog-audit blog-content-research; do
         mkdir -p "${SKILL_DIR}/${skill}"
     done
     mkdir -p "${AGENT_DIR}"

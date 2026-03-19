@@ -35,7 +35,9 @@ Reference documents:
 - **Local file**: Read the file directly
 - **URL**: Fetch with WebFetch, extract content
 - **Directory**: Scan for blog files, audit all (batch mode)
-- **Flags**: `--format json|table`, `--batch`, `--sort score`
+- **Flags**: `--format json|table`, `--batch`, `--sort score`, `--scope global|geo` (default: global)
+  - `global`: Evaluates for broad industry authority, topical communities (r/SaaS, HackerNews, StackOverflow)
+  - `geo`: Evaluates for regional entities, local social proof, regional information gain
 
 ## Scoring Process
 
@@ -74,8 +76,8 @@ Load `references/quality-scoring.md` for the full checklist. Score each:
 |-------|--------|---------------|
 | Heading hierarchy with keywords | 5 | H1 -> H2 -> H3, no skips, keyword in 2-3 headings |
 | Title tag (40-60 chars, keyword, power word) | 4 | Front-loaded keyword, positive sentiment |
-| Keyword placement/density | 4 | Natural integration, no stuffing, in first 100 words |
-| Internal linking (3-10 contextual) | 4 | Descriptive anchor text, bidirectional |
+| Entity & keyword placement | 4 | **Global:** Natural integration of broad industry entities and secondary keywords. **Geo:** Natural integration of regional entities (cities, local hubs). No stuffing, in first 100 words |
+| Internal & external links | 4 | **Global:** Links to authoritative global industry reports or broad product pillars. **Geo:** Links to regional resources or localized product pages. Descriptive anchor text, bidirectional |
 | URL structure | 3 | Short, keyword-rich, no stop words, lowercase |
 | Meta description (150-160 chars, stat) | 3 | Fact-dense, includes one statistic |
 | External linking (tier 1-3) | 2 | 3-8 outbound links to authoritative sources |
@@ -84,9 +86,9 @@ Load `references/quality-scoring.md` for the full checklist. Score each:
 | Check | Points | Pass Criteria |
 |-------|--------|---------------|
 | Author attribution (named, with bio) | 4 | Real name, credentials, not sales pitch |
-| Source citations (tier 1-3, inline) | 4 | 8+ unique stats, zero fabricated |
+| Social consensus & UGC | 4 | Embeds or cites real user-generated content to validate claims. **Global:** Uses global forums (StackOverflow, HackerNews, r/SaaS). **Geo:** Uses local forums (r/Austin, local X lists). 8+ unique stats, zero fabricated |
 | Trust indicators | 4 | Contact page, about page, editorial policy |
-| Experience signals | 3 | "When we tested...", original photos/data |
+| Experience & information gain | 3 | Brings net-new insights to the SERP. **Global:** "Based on our analysis of 10,000 developers..." **Geo:** "Based on local market conditions..." Original photos/data |
 
 #### Technical Elements (15 points)
 | Check | Points | Pass Criteria |
@@ -146,21 +148,32 @@ Analyze the post for AI-generated content risk:
 - Provide specific passages that triggered the flag
 - Recommend humanization: personal anecdotes, varied sentence rhythm, domain jargon
 
-### Step 3.5: Social Visibility Check (Optional — ByCrawl)
+### Step 3.5: Community Consensus Audit (Via ByCrawl)
 
-> "Would you like me to check social visibility for this post's topic via bycrawl? (yes/no)"
+Use the social media crawler/WebFetch to query the target keyword.
+- **If `--scope geo`:** Search localized platforms/subreddits (e.g., `r/Chicago`, local X lists, regional forums).
+- **If `--scope global`:** Search massive topical communities (e.g., `r/technology`, `r/SaaS`, `Hacker News`, `StackOverflow`, X Tech communities).
 
-If yes, run a quick cross-platform check (~4-6 API calls):
-1. Search Reddit, X, YouTube for the post's primary keyword
-2. Assess:
+Run a cross-platform check (~4-6 API calls):
+1. Search Reddit, X, YouTube for the post's primary keyword (scoped to global or geo communities)
+2. Assess the blog against the crawler data:
+   - **Industry Pain Point Match**: Did the blog address the *actual* debates happening in the community right now? (e.g., if Hacker News is debating AWS egress fees, does a global cloud computing blog mention it?)
+   - **Topical Dialect & Jargon**: Did the blog use the current acronyms and slang being used by professionals in the crawled forums?
+   - **UGC Integration**: Did the post successfully cite broader community consensus? (e.g., "While Reddit's sysadmin community generally prefers X, enterprise users lean toward Y.")
+3. Assess overall social visibility:
    - **Social demand**: Strong / Moderate / Weak based on result volume
    - **Brand presence**: Is the post or site mentioned in social discussions?
    - **Competitor visibility**: Do competitors dominate social for this keyword?
-3. Add a `Social Visibility` section to the report:
+4. Add a `Social Visibility` section to the report:
 
 ```
-### Social Visibility (ByCrawl)
+### Social Visibility (ByCrawl — {scope})
+- **Scope**: [Global / Geo]
+- **Communities checked**: [list of subreddits, forums, platforms queried]
 - **Topic demand**: [Strong/Moderate/Weak] across [N] platforms
+- **Pain point match**: [Yes/Partial/No] — [detail]
+- **Dialect alignment**: [Yes/No] — [missing jargon or acronyms]
+- **UGC integration**: [Yes/No] — [community consensus cited?]
 - **Brand mentions**: [Found/Not found] in social discussions
 - **Competitor presence**: [competitors seen in results]
 - **Recommendation**: [e.g., "Strong demand but no brand presence — distribute via Reddit and X"]

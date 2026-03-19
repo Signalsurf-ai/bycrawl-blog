@@ -101,7 +101,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Dark-mode compatible, accessible (WCAG), platform-aware (HTML/JSX auto-detection)
 - **Image URL verification** in researcher agent — validates HTTP 200 before embedding
 - **Mid-writing readability check** in writer agent — self-checks Flesch targets before returning
-- **Image density guidelines** by content type in visual-media.md
 
 ### Changed
 - claude-blog is now fully self-contained — no external skill dependencies required
@@ -116,7 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **12 slash commands**: write, rewrite, analyze, brief, calendar, strategy, outline, seo-check, schema, repurpose, geo, audit
 - **12 reference documents** loaded on-demand (RAG pattern):
-  - google-landscape-2026, geo-optimization, content-rules, visual-media, quality-scoring
+  - google-landscape-2026, geo-optimization, content-rules, quality-scoring
   - eeat-signals, content-templates, ai-crawler-guide, schema-stack, platform-guides, distribution-playbook, internal-linking
 - **12 content type templates**: how-to, listicle, case study, comparison, pillar page, product review, thought leadership, roundup, tutorial, news analysis, data research, FAQ/knowledge base
 - **4 specialized subagents**: blog-researcher, blog-writer, blog-seo, blog-reviewer

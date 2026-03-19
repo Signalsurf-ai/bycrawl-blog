@@ -125,7 +125,6 @@ a specific optimization domain:
 | google-landscape-2026.md | December 2025 Core Update, E-E-A-T, algorithm changes |
 | geo-optimization.md | GEO/AEO techniques, AI citation factors |
 | content-rules.md | Structure, readability, answer-first formatting |
-| visual-media.md | Image sourcing (Pixabay, Unsplash) + SVG chart integration |
 | quality-scoring.md | Full scoring checklist with point values |
 | eeat-signals.md | E-E-A-T demonstration techniques |
 | content-templates.md | Template selection and customization guide |
@@ -174,7 +173,6 @@ Code's context as a CLI tool. Provides:
   Orchestrator (skills/blog/SKILL.md)
       |
       +-- Loads: references/content-rules.md
-      |         references/visual-media.md
       |         templates/[auto-selected].md
       |
       +-- Spawns: blog-researcher agent
@@ -185,8 +183,6 @@ Code's context as a CLI tool. Provides:
       |   +-- Returns: structured research data
       |
       +-- Presents outline for user approval
-      |
-      +-- Invokes: blog-chart (2-4 charts, built-in)
       |
       +-- Spawns: blog-writer agent
       |   |
@@ -240,7 +236,7 @@ load them selectively based on the current task:
 ```
 Task                    References Loaded
 ----                    -----------------
-/blog write             content-rules, visual-media, quality-scoring
+/blog write             content-rules, quality-scoring
 /blog rewrite           content-rules, quality-scoring
 /blog analyze           quality-scoring
 /blog brief             content-rules, geo-optimization
@@ -384,8 +380,7 @@ After installation, `claude-blog` occupies this structure inside `~/.claude/`:
 │   │   │   ├── internal-linking.md
 │   │   │   ├── platform-guides.md
 │   │   │   ├── quality-scoring.md
-│   │   │   ├── schema-stack.md
-│   │   │   └── visual-media.md
+│   │   │   └── schema-stack.md
 │   │   ├── templates/
 │   │   │   ├── how-to.md
 │   │   │   ├── listicle.md

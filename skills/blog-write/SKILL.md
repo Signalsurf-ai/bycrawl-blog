@@ -33,7 +33,6 @@ follows the 6 pillars of dual optimization (Google rankings + AI citations).
 - `references/quality-scoring.md` — 5-category scoring (Content 30, SEO 25, E-E-A-T 15, Technical 15, AI Citation 15)
 - `references/eeat-signals.md` — Experience, expertise, authority, trust markers
 - `references/internal-linking.md` — Linking strategy and anchor text rules
-- `references/visual-media.md` — Image sourcing and chart styling
 - `references/social-serp-research.md` — ByCrawl API patterns and Playwright SERP scraping
 
 ## Workflow
@@ -105,8 +104,6 @@ Spawn a `blog-researcher` agent (or do inline research with WebSearch):
    - Alternative: `site:unsplash.com [topic] wide`
    - Fallback: `site:pexels.com [topic] wide banner`
    - Target dimensions: 1200x630 (OG-compatible) or 1920x1080
-   - Or generate a custom SVG cover via `blog-chart` (text-on-gradient with key stat)
-   - See `references/visual-media.md` for cover image sizing details
 3. **Find 3-5 inline images** from open-source platforms:
    - **Pixabay** (preferred): Search `site:pixabay.com [topic keywords]`
      - Extract image URL from page
@@ -116,8 +113,7 @@ Spawn a `blog-researcher` agent (or do inline research with WebSearch):
      - Build URL: `https://images.unsplash.com/photo-<id>?w=1200&h=630&fit=crop&q=80`
    - **Pexels** (fallback): Search `site:pexels.com [topic keywords]`
 4. **Plan 2-4 data visualizations** from researched statistics
-   - Select diverse chart types (see `references/visual-media.md`)
-   - Map data points to chart formats
+   - Select diverse chart types   - Map data points to chart formats
 
 #### ByCrawl Social Research
 
@@ -220,19 +216,6 @@ adapt this skeleton to match the template's section structure:
 ```
 
 Present the outline to the user for approval before writing.
-
-### Phase 4: Chart Generation (Built-In)
-
-When the researcher identifies chart-worthy data (3+ comparable metrics, trend data,
-before/after comparisons):
-
-1. Select chart type using the diversity rule (no repeated types per post)
-2. Invoke `blog-chart` sub-skill with: chart type, title, data values, source, platform format
-3. Embed the returned SVG directly in the post within a `<figure>` wrapper
-4. Target 2-4 charts per 2,000-word post
-5. Distribute charts evenly — never cluster them
-
-See `references/visual-media.md` for chart type selection and styling rules.
 
 ### Phase 5: Content Writing
 

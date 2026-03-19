@@ -102,7 +102,6 @@ irm https://raw.githubusercontent.com/AgriciDaniel/claude-blog/main/install.ps1 
 | No answer-first formatting | -20 pts max | Add a 40-60 word stat paragraph at the start of every H2 section |
 | Fabricated statistics | -8 pts + Critical flag | Replace every unsourced number with a real stat from a tier 1-3 source |
 | Missing images | -4 to -7 pts | Add 3-5 images from Pixabay/Unsplash with descriptive alt text |
-| Missing charts | -5 to -8 pts | Generate 2-4 SVG charts via built-in `blog-chart` (diverse types) |
 | No FAQ section | -4 pts | Add 3-5 FAQ items with 40-60 word answers containing statistics |
 | Long paragraphs (>150 words) | -8 pts | Split into 40-80 word paragraphs |
 | Missing `lastUpdated` | -4 pts | Add `lastUpdated: "YYYY-MM-DD"` to frontmatter |
@@ -345,7 +344,6 @@ Hugo site uses YAML (`---` delimiters), add to `hugo.toml`:
 **Causes**:
 - **Research phase**: WebSearch calls for statistics and images can take
   30-60 seconds depending on the topic
-- **Chart generation**: Each `blog-chart` invocation adds 10-20 seconds
 - **Large context**: Loading many reference files increases processing time
 
 **Mitigation**:

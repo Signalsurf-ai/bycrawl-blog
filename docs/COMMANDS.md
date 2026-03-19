@@ -46,7 +46,6 @@ AI citation platforms.
 1. **Topic clarification** -- Asks for audience, keyword, word count, platform
 2. **Research** -- Spawns `blog-researcher` agent to find 8-12 statistics and images
 3. **Outline** -- Generates structured outline, presents for approval
-4. **Chart generation** -- Creates 2-4 SVG charts via built-in `blog-chart`
 5. **Content writing** -- Spawns `blog-writer` agent for the full article
 6. **Quality check** -- Verifies all 6 optimization pillars
 7. **Delivery** -- Saves file and presents summary

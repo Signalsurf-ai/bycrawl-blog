@@ -94,8 +94,7 @@ If you prefer not to run the installer, copy files to these paths manually.
 │   │   │   ├── content-rules.md
 │   │   │   ├── geo-optimization.md
 │   │   │   ├── google-landscape-2026.md
-│   │   │   ├── quality-scoring.md
-│   │   │   └── visual-media.md
+│   │   │   └── quality-scoring.md
 │   │   ├── templates/                        # 12 content type templates
 │   │   │   └── *.md
 │   │   └── scripts/

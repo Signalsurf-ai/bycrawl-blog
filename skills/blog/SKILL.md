@@ -80,6 +80,7 @@ Perplexity, Google AI Overviews, Gemini).
    - `geo` / `aeo` / `citation` → `blog-geo` (AI citation audit)
    - `audit` / `health` → `blog-audit` (site-wide assessment)
    - `humanize` / `de-ai` / `natural` → `blog-humanize` (remove AI patterns)
+   - `content-research` / `research` / `ideas` → `blog-content-research` (content gap analysis and idea mining)
    - `update` → `blog-rewrite` (with freshness-update mode)
 
 ### Platform Detection
@@ -156,7 +157,6 @@ Load on-demand as needed (12 references):
 - `references/google-landscape-2026.md` -- December 2025 Core Update, E-E-A-T, algorithm changes
 - `references/geo-optimization.md` -- GEO/AEO techniques, AI citation factors
 - `references/content-rules.md` -- Structure, readability, answer-first formatting
-- `references/visual-media.md` -- Image sourcing (Pixabay, Unsplash, Pexels) + SVG chart integration
 - `references/quality-scoring.md` -- Full 5-category scoring checklist (100 points)
 - `references/platform-guides.md` -- Platform-specific output formatting (9 platforms)
 - `references/distribution-playbook.md` -- Content distribution strategy (Reddit, YouTube, LinkedIn, etc.)
@@ -204,7 +204,7 @@ Templates are in `templates/` and contain section structure, markers, and checkl
 | `blog-geo` | AI citation readiness audit with 0-100 GEO score |
 | `blog-audit` | Full-site blog health assessment with parallel subagents |
 | `blog-humanize` | Remove AI writing patterns, add natural voice and personality |
-| `blog-chart` | Generate inline SVG data visualization charts with dark-mode styling |
+| `blog-content-research` | Content gap analysis, idea mining, and trend research via bycrawl |
 
 ## Agents
 
@@ -249,12 +249,6 @@ Standard execution order for `/blog write`:
 
 For `/blog analyze`, only steps 1 and 6 run (read + score).
 For `/blog audit`, step 6 runs in parallel across all posts in the directory.
-
-### Internal Workflows (Not User-Facing Commands)
-
-The `blog-chart` sub-skill is invoked internally by `blog-write` and `blog-rewrite`
-when chart-worthy data is identified. It is not a standalone slash command.
-Users do not need to call it directly.
 
 ## Integration
 

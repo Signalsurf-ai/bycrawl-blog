@@ -30,11 +30,11 @@ claude-blog/
     blog-strategy/SKILL.md        # Blog positioning and planning
     blog-seo-check/SKILL.md      # Post-writing SEO validation
     blog-schema/SKILL.md          # JSON-LD schema generation
-    blog-chart/SKILL.md           # Inline SVG data visualizations
     blog-repurpose/SKILL.md       # Multi-platform repurposing
     blog-geo/SKILL.md             # AI citation optimization
     blog-humanize/SKILL.md        # Remove AI writing patterns
     blog-audit/SKILL.md           # Full-site blog health assessment
+    blog-content-research/SKILL.md # Content gap analysis and idea mining
   agents/                            # 4 specialized subagents
     blog-researcher.md              # Statistics and source research
     blog-writer.md                  # Content generation

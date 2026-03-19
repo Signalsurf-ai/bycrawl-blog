@@ -19,11 +19,11 @@
         "./skills/blog-strategy",
         "./skills/blog-seo-check",
         "./skills/blog-schema",
-        "./skills/blog-chart",
         "./skills/blog-repurpose",
         "./skills/blog-geo",
         "./skills/blog-humanize",
-        "./skills/blog-audit"
+        "./skills/blog-audit",
+        "./skills/blog-content-research"
       ]
     }
   ]

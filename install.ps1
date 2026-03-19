@@ -40,7 +40,7 @@ function Main {
     New-Item -ItemType Directory -Force -Path (Join-Path $SkillDir "blog" "scripts") | Out-Null
     New-Item -ItemType Directory -Force -Path $AgentDir | Out-Null
 
-    foreach ($skill in @("blog-write", "blog-rewrite", "blog-analyze", "blog-brief", "blog-calendar", "blog-strategy", "blog-outline", "blog-seo-check", "blog-schema", "blog-repurpose", "blog-geo", "blog-audit", "blog-chart")) {
+    foreach ($skill in @("blog-write", "blog-rewrite", "blog-analyze", "blog-brief", "blog-calendar", "blog-strategy", "blog-outline", "blog-seo-check", "blog-schema", "blog-repurpose", "blog-geo", "blog-audit", "blog-content-research")) {
         New-Item -ItemType Directory -Force -Path (Join-Path $SkillDir $skill) | Out-Null
     }
 

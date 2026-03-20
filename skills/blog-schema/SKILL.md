@@ -1,10 +1,10 @@
 ---
 name: blog-schema
 description: >
-  Generate complete JSON-LD schema markup for blog posts including BlogPosting,
-  Person, Organization, BreadcrumbList, FAQPage, and ImageObject. Validates
-  against Google requirements and warns about deprecated types. Use when user
-  says "schema", "blog schema", "json-ld", "structured data", "schema markup",
+  Generate complete JSON-LD schema markup for blog posts matching the byCrawl
+  BlogPosting component. Uses flat structure with inline author/publisher objects.
+  Validates against Google requirements and warns about deprecated types. Use when
+  user says "schema", "blog schema", "json-ld", "structured data", "schema markup",
   "generate schema".
 allowed-tools:
   - Read
@@ -15,245 +15,168 @@ allowed-tools:
 
 # Blog Schema -- JSON-LD Structured Data Generation
 
-Generates complete, validated JSON-LD schema markup for blog posts using the
-@graph pattern. Combines multiple schema types into a single script tag with
-stable @id references for entity linking.
+Generates validated JSON-LD schema markup for blog posts using a **flat BlogPosting
+structure** with inline author and publisher objects. This matches the byCrawl
+`<JsonLd>` component in `@/components/json-ld`.
+
+## Output Structure
+
+The schema is a single flat `BlogPosting` object -- NOT the @graph pattern. The
+`<JsonLd>` React component renders it as a `<script type="application/ld+json">` tag.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Post title",
+  "description": "Post summary",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "url": "https://bycrawl.com/blog/{slug}",
+  "wordCount": 2400,
+  "keywords": ["keyword1", "keyword2"],
+  "articleSection": "Category",
+  "author": {
+    "@type": "Person",
+    "name": "Kyle Chung",
+    "url": "https://bycrawl.com",
+    "jobTitle": "Founder",
+    "sameAs": [
+      "https://x.com/kyelchung",
+      "https://linkedin.com/in/kyelchung"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "byCrawl"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "byCrawl",
+    "url": "https://bycrawl.com"
+  }
+}
+```
 
 ## Workflow
 
 ### Step 1: Read Content
 
-Read the blog post and extract all schema-relevant data:
+Read the blog post and extract schema-relevant data:
 - **Title** (headline)
-- **Author** (name, job title, social links, credentials)
-- **Dates** (datePublished, dateModified / lastUpdated)
-- **Description** (meta description)
-- **FAQ section** (question and answer pairs)
-- **Images** (cover image URL, dimensions, alt text; inline images)
-- **Organization info** (site name, URL, logo)
-- **Word count** (approximate from content length)
-- **Tags/categories** (for BreadcrumbList category)
+- **Summary** (description)
+- **Dates** (datePublished, dateModified -- falls back to datePublished)
 - **Slug** (from filename or frontmatter)
+- **Content** (for word count calculation)
+- **Keywords** (from frontmatter, optional)
+- **Article section** (from frontmatter, optional)
+- **Author** (from frontmatter, defaults to "Kyle Chung")
 
 ### Step 2: Generate BlogPosting Schema
 
-Complete BlogPosting with all required and recommended properties:
+Build the flat BlogPosting object with these exact fields:
 
-```json
-{
-  "@type": "BlogPosting",
-  "@id": "{siteUrl}/blog/{slug}#article",
-  "headline": "Post title (max 110 chars)",
-  "description": "Meta description (150-160 chars)",
-  "datePublished": "YYYY-MM-DD",
-  "dateModified": "YYYY-MM-DD",
-  "author": { "@id": "{siteUrl}/author/{author-slug}#person" },
-  "publisher": { "@id": "{siteUrl}#organization" },
-  "image": { "@id": "{siteUrl}/blog/{slug}#primaryimage" },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{siteUrl}/blog/{slug}"
-  },
-  "wordCount": 2400,
-  "articleBody": "First 200 characters of content as excerpt..."
-}
-```
+| Property | Required | Source |
+|----------|----------|--------|
+| `@context` | Yes | Always `"https://schema.org"` |
+| `@type` | Yes | Always `"BlogPosting"` |
+| `headline` | Yes | `post.title` |
+| `description` | Yes | `post.summary` |
+| `datePublished` | Yes | `post.date` (ISO 8601) |
+| `dateModified` | Yes | `post.dateModified \|\| post.date` |
+| `url` | Yes | `https://bycrawl.com/blog/{slug}` |
+| `wordCount` | Yes | Computed from `post.content` |
+| `keywords` | Conditional | Only if `post.keywords` exists |
+| `articleSection` | Conditional | Only if `post.articleSection` exists |
+| `author` | Yes | Inline Person object |
+| `publisher` | Yes | Inline Organization object |
 
-Required properties: @type, headline, datePublished, author, publisher, image.
-Recommended properties: description, dateModified, mainEntityOfPage, wordCount,
-articleBody (excerpt).
+### Step 3: Build Author Object
 
-### Step 3: Generate Person Schema
-
-Author schema with stable @id for cross-referencing:
+The author is an **inline Person object** (not an @id reference):
 
 ```json
 {
   "@type": "Person",
-  "@id": "{siteUrl}/author/{author-slug}#person",
-  "name": "Author Name",
-  "jobTitle": "Role or Title",
-  "url": "{siteUrl}/author/{author-slug}",
+  "name": "Kyle Chung",
+  "url": "https://bycrawl.com",
+  "jobTitle": "Founder",
   "sameAs": [
-    "https://twitter.com/handle",
-    "https://linkedin.com/in/handle",
-    "https://github.com/handle"
-  ]
+    "https://x.com/kyelchung",
+    "https://linkedin.com/in/kyelchung"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "byCrawl"
+  }
 }
 ```
 
-Optional properties (include when available):
-- `alumniOf` — Educational institution (Organization type)
-- `worksFor` — Employer (reference to Organization @id if same entity)
+If the post has a custom `post.author`, use that name but keep the same structure.
 
-### Step 4: Generate Organization Schema
+### Step 4: Build Publisher Object
 
-Blog's parent organization entity:
+The publisher is an **inline Organization object**:
 
 ```json
 {
   "@type": "Organization",
-  "@id": "{siteUrl}#organization",
-  "name": "Organization Name",
-  "url": "{siteUrl}",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "{siteUrl}/logo.png",
-    "width": 600,
-    "height": 60
-  },
-  "sameAs": [
-    "https://twitter.com/org",
-    "https://linkedin.com/company/org",
-    "https://github.com/org"
-  ]
+  "name": "byCrawl",
+  "url": "https://bycrawl.com"
 }
 ```
 
-Logo requirements: must be a valid image URL. Google recommends logos be
-112x112px minimum, 600px wide maximum. Rectangular logos preferred for
-BlogPosting publishers.
+### Step 5: Compute Word Count
 
-### Step 5: Generate BreadcrumbList
+Strip HTML tags and markdown syntax, then count whitespace-delimited words:
 
-Navigation breadcrumb schema showing content hierarchy:
-
-```json
-{
-  "@type": "BreadcrumbList",
-  "@id": "{siteUrl}/blog/{slug}#breadcrumb",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{siteUrl}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Category Name",
-      "item": "{siteUrl}/blog/category/{category-slug}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Post Title",
-      "item": "{siteUrl}/blog/{slug}"
-    }
-  ]
+```typescript
+function countWords(content: string): number {
+  const text = content.replace(/<[^>]*>/g, '').replace(/[#*_`~\[\](){}|>-]/g, '');
+  return text.split(/\s+/).filter(Boolean).length;
 }
 ```
 
-If no category is available, use "Blog" as the second breadcrumb item with
-`{siteUrl}/blog` as the URL.
+### Step 6: Conditional Fields
 
-### Step 6: Generate FAQPage Schema
+Only include `keywords` and `articleSection` if they exist in frontmatter:
 
-Extract Q&A pairs from the blog post's FAQ section:
-
-```json
-{
-  "@type": "FAQPage",
-  "@id": "{siteUrl}/blog/{slug}#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the question?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The complete answer text (40-60 words with statistic)."
-      }
-    }
-  ]
-}
+```typescript
+...(post.keywords && { keywords: post.keywords }),
+...(post.articleSection && { articleSection: post.articleSection }),
 ```
 
-Important note: Google restricted FAQ rich results to government and health
-sites since August 2023. However, FAQ schema markup still provides value
-because:
-- AI systems (ChatGPT, Perplexity, Gemini) extract FAQ data for citations
-- It structures content for future rich result eligibility changes
-- It improves content organization signals
+Do NOT include these fields with empty values.
 
-### Step 7: Generate ImageObject
-
-Cover image schema for the post's primary image:
-
-```json
-{
-  "@type": "ImageObject",
-  "@id": "{siteUrl}/blog/{slug}#primaryimage",
-  "url": "https://cdn.pixabay.com/photo/.../image.jpg",
-  "width": 1200,
-  "height": 630,
-  "caption": "Descriptive caption matching alt text"
-}
-```
-
-Image requirements:
-- URL must be crawlable and publicly accessible
-- Width and height should reflect actual image dimensions
-- Caption should match or closely align with the image alt text
-- Preferred dimensions: 1200x630 (OG-compatible) or 1920x1080
-
-### Step 8: Validate & Warn
-
-Check for deprecated schema types and apply validation rules:
-
-**NEVER use these deprecated types:**
-- **HowTo** — Deprecated September 2023 (Google no longer shows rich results)
-- **SpecialAnnouncement** — Deprecated July 2025
-- **Practice Problem** — Deprecated (education markup)
-- **Dataset** — Deprecated for general use
-- **Sitelinks Search Box** — Deprecated
-- **Q&A** — Deprecated January 2026 (distinct from FAQPage)
+### Step 7: Validate & Warn
 
 **Validation checks:**
-1. All @id references resolve to entities within the @graph
-2. dateModified is equal to or after datePublished
-3. headline does not exceed 110 characters
-4. description is between 50-160 characters
-5. All URLs are absolute (not relative)
-6. Image dimensions are positive integers
-7. BreadcrumbList positions are sequential starting from 1
-8. FAQPage has at least 2 questions
+1. `dateModified` is equal to or after `datePublished`
+2. `headline` does not exceed 110 characters
+3. `description` is between 50-160 characters
+4. `url` is absolute (starts with `https://`)
+5. `wordCount` is a positive integer
+6. `keywords` is an array of strings (if present)
 
-**AI citation optimization note:** Pages using 3 or more schema types have
-approximately 13% higher AI citation likelihood. This skill generates 6 types
-by default (BlogPosting, Person, Organization, BreadcrumbList, FAQPage,
-ImageObject) to maximize both search engine understanding and AI extraction.
+**NEVER use these deprecated types:**
+- **HowTo** -- Deprecated September 2023
+- **SpecialAnnouncement** -- Deprecated July 2025
+- **Q&A** -- Deprecated January 2026 (distinct from FAQPage)
+- **Dataset**, **Sitelinks Search Box**, **Practice Problem**
 
-### Step 9: Output
+### Step 8: Output
 
-Combine all schemas into a single `<script>` tag using the @graph pattern:
+Write the schema as frontmatter fields or as a JSON block the user can add to
+their blog post's markdown file. The `<JsonLd>` component in the Next.js app
+reads these fields from the post object and renders them automatically.
 
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    { "@type": "BlogPosting", ... },
-    { "@type": "Person", ... },
-    { "@type": "Organization", ... },
-    { "@type": "BreadcrumbList", ... },
-    { "@type": "FAQPage", ... },
-    { "@type": "ImageObject", ... }
-  ]
-}
-</script>
-```
+**What the component does NOT include** (handle separately if needed):
+- BreadcrumbList (rendered by a different component or not used)
+- FAQPage (can be added as a separate `<JsonLd>` instance if the post has FAQs)
+- ImageObject (cover image is in OG meta, not in JSON-LD)
+- @graph pattern (the component uses a flat structure)
+- @id references (all entities are inline)
 
-**@graph pattern benefits:**
-- Single script tag instead of multiple — cleaner HTML
-- Entity linking via stable @id references (e.g., author references Person by @id)
-- Google and AI systems parse @graph arrays correctly
-- Easier to maintain and update as a single block
-
-**Output options:**
-- **Embedded HTML** — Ready to paste into `<head>` or before `</body>`
-- **Standalone JSON** — For CMS schema fields or API injection
-- **MDX component** — If the project uses MDX, wrap in a component
-
-Save the generated schema to the blog post file or to a separate schema file
-as the user prefers.
+If the user wants additional schema types (FAQ, Breadcrumb), generate them as
+separate `<JsonLd>` component instances, each with their own flat structure
+including `@context`.

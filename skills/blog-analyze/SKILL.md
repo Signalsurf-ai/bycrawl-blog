@@ -49,7 +49,7 @@ Read the blog post and extract:
 - Paragraph count and word counts per paragraph
 - Statistics (any number claims with or without sources)
 - Images (count, alt text presence, format)
-- Charts/SVGs (count, type diversity)
+- Images (count, alt text presence)
 - Links (internal, external, broken)
 - FAQ section presence
 - Schema markup (types present)
@@ -238,7 +238,6 @@ Default output format (Markdown):
 - H2 sections: [N] (X as questions, X with answer-first formatting)
 - Statistics: [N] sourced / [N] unsourced
 - Images: [N] (X with alt text, formats: ...)
-- Charts: [N] (types: ...)
 - Internal links: [N]
 - External links: [N] (tier breakdown: ...)
 - Schema types: [list]

@@ -4,7 +4,7 @@ description: >
   Rewrite and optimize existing blog posts for Google rankings (December 2025
   Core Update, E-E-A-T) and AI citations (GEO/AEO). Replaces fabricated statistics
   with sourced data, applies answer-first formatting, adds Pixabay/Unsplash
-  images, generates built-in SVG charts, injects FAQ schema, performs
+  images, injects FAQ schema, performs
   AI content detection, adds citation capsules and information gain markers,
   and updates freshness signals. Works with any blog format (MDX, markdown, HTML).
   Use when user says "rewrite blog", "optimize blog", "update blog",
@@ -42,7 +42,7 @@ and AI citation platforms. Preserves the author's voice while applying the
 2. **Run the quality checklist** against `references/quality-scoring.md`:
    - Count fabricated vs sourced statistics
    - Check answer-first formatting (H2 -> stat in first sentence?)
-   - Count images and charts (type diversity?)
+   - Count images
    - Measure paragraph lengths (any > 150 words?)
    - Check heading hierarchy (H1 -> H2 -> H3, no skips?)
    - Look for FAQ schema
@@ -93,10 +93,6 @@ Wait for user approval before proceeding.
    - Pixabay: `site:pixabay.com [topic keywords]`
    - Unsplash: `site:unsplash.com [topic keywords]`
    - Verify each URL returns HTTP 200
-4. **Plan charts** if post has fewer than 2:
-   - Identify data suitable for visualization
-   - Select diverse chart types
-
 #### ByCrawl Social Enrichment
 
 Run these enrichments automatically (see `references/social-serp-research.md`):
@@ -119,7 +115,7 @@ Apply changes in this order:
 #### 4a. Preserve What Works
 - Keep the author's voice and unique perspective
 - Preserve original insights and first-hand experience
-- Keep existing quality images and charts
+- Keep existing quality images
 - Maintain internal links
 
 #### 4b. Fix Frontmatter
@@ -152,8 +148,7 @@ Every H2 section MUST open with a 40-60 word paragraph containing:
 
 #### 4g. Add Visual Elements
 - Embed new images after H2 headings, spaced evenly
-- Embed charts within relevant sections
-- Adapt embed format to detected platform (MDX vs markdown vs HTML)
+- Adapt image format to detected platform (MDX vs markdown vs HTML)
 
 #### 4h. Add/Improve FAQ
 - If no FAQ exists, add one (3-5 questions)
@@ -307,8 +302,7 @@ Rules:
 
 ### Changes Made
 - [X] statistics replaced with sourced data
-- [X] SVG charts added (types: ...)
-- [X] images added from Pixabay/Unsplash
+- [X] images added from Pixabay/Unsplash/Pexels
 - Answer-first formatting applied to [N] H2 sections
 - FAQ schema injected with [N] questions
 - TL;DR box: [added/updated]
@@ -319,7 +313,6 @@ Rules:
 - Self-promotion reduced to [N] mentions
 
 ### Visual Elements
-- Charts: [count] ([types])
 - Images: [count]
 
 ### Social Intelligence (if bycrawl enrichment was used)

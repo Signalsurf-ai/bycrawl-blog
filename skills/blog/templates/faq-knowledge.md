@@ -143,7 +143,7 @@ Functional questions about mechanics and capabilities.
 
 [ANSWER-FIRST] [Topic/feature] works by [mechanism explained in 40-60 words without jargon]. [One sentence of technical detail for readers who want depth].
 
-[VISUAL: simple-diagram showing how it works, if applicable]
+[IMAGE] Diagram showing how it works, if applicable.
 
 [INTERNAL-LINK: link to technical deep-dive content]
 
@@ -374,7 +374,7 @@ Before publishing, verify:
 - [ ] At least 3 [STAT] markers with relevant data points
 - [ ] At least 2 [INFO-GAIN] markers with original experience or insight
 - [ ] At least 6 [INTERNAL-LINK] zones connecting to detailed content
-- [ ] At least 1 [VISUAL] marker (comparison table or diagram)
+- [ ] At least 1 [IMAGE] marker (comparison table or diagram)
 - [ ] Related Resources section has 3-5 links
 - [ ] "Still Have Questions?" section with clear contact/community path
 - [ ] FAQPage structured data schema prepared for all questions

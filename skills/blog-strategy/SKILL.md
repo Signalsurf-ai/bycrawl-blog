@@ -72,7 +72,7 @@ Research competitors' blogs:
 2. For each competitor, assess:
    - Publishing frequency
    - Content types (guides, case studies, comparisons, news)
-   - Visual quality (images, charts, videos)
+   - Visual quality (images, videos)
    - Schema usage
    - Social distribution (YouTube, Reddit, LinkedIn)
    - AI citation presence (search ChatGPT/Perplexity for industry terms)
@@ -238,7 +238,7 @@ Set quality standards that all blog content must meet:
 | Blog quality score | 80+ | `/blog analyze` |
 | E-E-A-T compliance | Named author + 8+ tier 1-3 sources | Manual review |
 | AI citation readiness | Answer-first + FAQ + citation capsules | `/blog analyze` |
-| Visual minimum | 2+ charts + 3+ images per post | Asset count |
+| Visual minimum | 3+ images per post | Asset count |
 | Internal links | 5+ per post (within cluster) | Link audit |
 | Schema markup | Article + FAQ + relevant type | Structured data test |
 | Word count | 1,500+ for spokes, 3,000+ for pillars | Word count tool |
@@ -304,7 +304,7 @@ Reference: `references/distribution-playbook.md` for detailed channel tactics an
 #### Content Quality
 - Blog quality score via `/blog analyze` (target: 80+)
 - Content freshness (% of posts updated within 30 days)
-- Visual element coverage (charts + images per post)
+- Visual element coverage (images per post)
 - Citation tier quality (% tier 1-3 sources)
 
 #### Business Impact
@@ -350,7 +350,7 @@ Output format:
 ## Content Velocity
 - New posts: [N]/week
 - Freshness updates: [N]/month
-- Visual elements: [N] charts + [N] images per post
+- Visual elements: [N] images per post
 
 ## 90-Day Roadmap
 ### Month 1: Foundation

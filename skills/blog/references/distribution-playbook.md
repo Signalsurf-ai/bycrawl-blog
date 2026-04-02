@@ -107,7 +107,7 @@ topical authority that AI systems recognize.
 |-------------|---------------|-------|
 | Introduction | 0:00 Hook + overview | Match blog's opening stat |
 | H2 Section 1 | Chapter 1 | Same data points, visual explanation |
-| H2 Section 2 | Chapter 2 | Show charts/data on screen |
+| H2 Section 2 | Chapter 2 | Show data on screen |
 | H2 Section 3 | Chapter 3 | Demo or walkthrough if applicable |
 | FAQ | Q&A Chapter | Answer the same FAQ questions |
 | Conclusion | Summary + CTA | Link to blog in description |
@@ -259,7 +259,7 @@ Convert blog posts into Twitter threads (7-9 tweets) for maximum reach:
 | Stats per tweet | Include one specific data point |
 | Length | 200-280 characters per tweet (not maximum, but substantive) |
 | Hashtags | Maximum 2 per tweet, use niche hashtags over broad ones |
-| Media | Add an image or chart to 2-3 tweets in the thread |
+| Media | Add an image to 2-3 tweets in the thread |
 | CTA | Clear and specific: "Read the full breakdown" not "check it out" |
 
 ### Thread Template
@@ -286,7 +286,7 @@ Key takeaways:
 3. [Finding 3]
 
 Tweet 9 (CTA):
-Full breakdown with all the data and charts:
+Full breakdown with all the data:
 
 [Blog URL]
 
@@ -330,7 +330,7 @@ and early traffic signals that benefit both traditional and AI search.
 
 3. **[Finding 3]**: [Stat] ([Source]). [One sentence implication.]
 
-[Read the full analysis with charts and data →](blog-url)
+[Read the full analysis with all the data →](blog-url)
 
 ---
 

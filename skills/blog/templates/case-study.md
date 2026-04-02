@@ -108,7 +108,7 @@
 - Any frameworks, scorecards, or evaluation tools used
 - Who was involved in the decision and what perspectives they brought
 
-[VISUAL: decision-matrix] If applicable, include a table showing the options evaluated, the criteria, and the scores that led to the final choice.
+[IMAGE] If applicable, include a table or image showing the options evaluated, the criteria, and the scores that led to the final choice.
 
 [STAT: Supporting data point that justified the strategic choice (e.g., benchmark, industry data, competitor analysis)]
 
@@ -151,7 +151,7 @@
 4. **Timeline** (1 sentence): When results were measured relative to implementation completion.
 5. **Unexpected benefits** (1-2 sentences): Any positive outcomes that weren't part of the original goals.
 
-[VISUAL: grouped-bar chart] Before/after comparison of 3-5 key metrics. Use a grouped bar chart with clear labels showing the "before" and "after" values side by side.
+[IMAGE] Before/after comparison of 3-5 key metrics. Use a visual with clear labels showing the "before" and "after" values side by side.
 
 [STAT: All results metrics with specific before/after numbers]
 
@@ -230,7 +230,7 @@ Before publishing, verify:
 - [ ] The Strategy section includes enough process detail for replication [INFO-GAIN: process documentation]
 - [ ] The Implementation section includes specific tools, timeline, and team size
 - [ ] The Results section has before/after metrics for at least 3 KPIs
-- [ ] Results include a [VISUAL: grouped-bar chart] for before/after comparison
+- [ ] Results include an [IMAGE] for before/after comparison
 - [ ] Key Takeaways are transferable, specific, and grounded in the case
 - [ ] At least 3 [INFO-GAIN] elements with original process or observational data
 - [ ] At least 5 [STAT] markers filled with sourced or first-party statistics

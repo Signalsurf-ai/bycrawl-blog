@@ -116,8 +116,8 @@
 4. **Supporting evidence** (50-75 words): Additional data points that validate your framework
    - [STAT: original or underreported statistic]
 
-[VISUAL: chart-type] This is the most important visual in the piece. Include a chart, graph, or diagram that makes your case visually compelling. Options:
-- A chart showing data that contradicts the conventional view
+[IMAGE] This is the most important visual in the piece. Include an image that makes your case visually compelling. Options:
+- A data visualization showing data that contradicts the conventional view
 - A side-by-side comparison of outcomes using conventional vs. alternative approaches
 - A framework diagram illustrating your proposed mental model
 
@@ -224,7 +224,7 @@
 - [ ] Total word count is 1,500-2,500 words
 - [ ] All [ANSWER-FIRST] prompts have been fulfilled — every section leads with the answer
 - [ ] All [STAT] markers replaced with real, cited statistics (with source and year)
-- [ ] All [VISUAL] markers replaced with actual charts or diagrams (especially the "What the Data Shows" chart)
+- [ ] All [IMAGE] markers replaced with actual images or diagrams (especially the "What the Data Shows" visual)
 - [ ] All [IMAGE] markers replaced with relevant visuals
 - [ ] All [INFO-GAIN] markers replaced with original data, experience, or insight
 - [ ] All [INTERNAL-LINK] zones populated with real links

@@ -130,7 +130,7 @@ Each expert gets their own H2 section. Order experts strategically — lead with
 
 [INFO-GAIN: unique analysis] The synthesis is your original contribution. Anyone can collect quotes — your ability to identify patterns and draw non-obvious conclusions is the information gain.
 
-[VISUAL: chart-type] Consider a simple visualization of expert consensus — a matrix showing which experts agree on which themes, a spectrum chart showing the range of opinions, or a Venn diagram of overlapping advice.
+[IMAGE] Consider a simple visualization of expert consensus -- a matrix showing which experts agree on which themes, a diagram showing the range of opinions, or a Venn diagram of overlapping advice.
 
 ---
 
@@ -252,7 +252,7 @@ Organize resources into 2-3 categories based on what experts mentioned or recomm
 - [ ] All [ANSWER-FIRST] prompts have been fulfilled — every section leads with the answer
 - [ ] All [STAT] markers replaced with real, cited statistics (with source and year)
 - [ ] All [IMAGE] markers replaced with actual expert headshots (with permission) or branded graphics
-- [ ] All [VISUAL] markers replaced with actual charts or diagrams
+- [ ] All [IMAGE] markers replaced with actual images or diagrams
 - [ ] All [INFO-GAIN] markers replaced with original editorial analysis (not just quote presentation)
 - [ ] All [INTERNAL-LINK] zones populated with real links to supporting content
 - [ ] All [FAQ] answers are concise (40-80 words) and lead with a direct answer

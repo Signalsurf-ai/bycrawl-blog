@@ -313,7 +313,6 @@ Platform detection affects:
 
 - Frontmatter format and field names
 - Image embedding syntax (markdown vs `<Image>` component)
-- Chart embedding format (HTML SVG vs JSX SVG with camelCase)
 - Schema injection method
 
 ---

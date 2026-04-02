@@ -99,7 +99,7 @@ Here's what the finished [project] looks like:
 - [Capability 3]
 
 **Architecture overview:**
-[VISUAL: simple-diagram showing components/data flow]
+[IMAGE] Diagram showing components/data flow.
 ```
 
 [INTERNAL-LINK: link to any prerequisite tutorials or foundational concepts]
@@ -250,7 +250,7 @@ Expected result:
 - [ ] [Check 2]: [How to verify]
 - [ ] [Check 3]: [How to verify]
 
-[VISUAL: flowchart of the verification process if complex]
+[IMAGE] Diagram of the verification process if complex.
 ```
 
 ---
@@ -373,7 +373,7 @@ Before publishing, verify:
 - [ ] At least 4 [IMAGE] markers placed at key visual moments
 - [ ] At least 2 [INFO-GAIN] sections with original tips/experience
 - [ ] At least 2 [STAT] markers with relevant data points
-- [ ] At least 1 [VISUAL] marker for architecture or flow diagrams
+- [ ] At least 1 [IMAGE] marker for architecture or flow diagrams
 - [ ] Troubleshooting table has 5+ common errors
 - [ ] FAQ has 3-5 questions phrased as search queries
 - [ ] [INTERNAL-LINK] zones placed in Prerequisites, Steps, Next Steps, and FAQ

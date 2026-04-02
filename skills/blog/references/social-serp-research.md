@@ -86,7 +86,7 @@ Reference for bycrawl API call patterns and Playwright scraping used by blog-wri
 
 - URL pattern: `https://trends.google.com/trends/explore?q={keyword}&date=today+12-m`
 - Use Playwright to scrape:
-  - Interest-over-time chart data
+  - Interest-over-time data
   - Related queries (top + rising)
 - Fallback: `WebSearch` for `"[keyword] google trends 2026"`
 

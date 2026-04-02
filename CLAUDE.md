@@ -56,7 +56,6 @@ claude-blog/
 | `/blog strategy` | Blog positioning and content planning |
 | `/blog seo-check` | Post-writing SEO validation checklist |
 | `/blog schema` | JSON-LD schema markup generation |
-| `/blog chart` | Inline SVG data visualization charts |
 | `/blog repurpose` | Multi-platform content repurposing |
 | `/blog geo` | AI citation optimization audit |
 | `/blog humanize` | Remove AI writing patterns, add natural voice |

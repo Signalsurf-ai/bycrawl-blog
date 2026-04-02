@@ -68,7 +68,6 @@ guide the writer (and `/blog write`) on what content each section needs.
 | Marker | Purpose | Example |
 |--------|---------|---------|
 | `[ANSWER-FIRST]` | Opening paragraph must be 40-60 words with a stat + source | "According to [Source], [stat]. This means [direct answer to heading question]." |
-| `[VISUAL: chart-type]` | Place a chart of the specified type here | `[VISUAL: grouped-bar]` for before/after data |
 | `[IMAGE]` | Place a relevant image with descriptive alt text here | After H2 heading, before body text |
 | `[INFO-GAIN: type]` | Section requires original data or unique perspective | `[INFO-GAIN: case-study]`, `[INFO-GAIN: personal-experience]` |
 | `[STAT: description]` | A specific statistic is needed in this location | `[STAT: market size or growth rate]` |
@@ -91,7 +90,7 @@ Every template, regardless of content type, follows this outer structure:
 [ANSWER-FIRST]: 40-60 words, stat + source, direct answer
 [CONTENT]: Topic coverage guidance
 [INFO-GAIN]: Where unique perspective is needed
-[VISUAL]: Chart type or [IMAGE] placement
+[IMAGE]: Image placement
 [INTERNAL-LINK]: Where to link related content
 
 [... 4-8 H2 sections depending on template ...]
@@ -133,15 +132,14 @@ Introduction (hook with difficulty/time stat)
 H2: Why This Matters [ANSWER-FIRST] [STAT]
 H2: Prerequisites / What You Need
 H2: Step 1 - [Action] [ANSWER-FIRST] [IMAGE]
-H2: Step 2 - [Action] [ANSWER-FIRST] [VISUAL: process-flow]
+H2: Step 2 - [Action] [ANSWER-FIRST] [IMAGE]
 H2: Step 3 - [Action] [ANSWER-FIRST] [IMAGE]
 H2: Common Mistakes to Avoid [INFO-GAIN: personal-experience]
 H2: FAQ [FAQ]
 Conclusion (key takeaways + next step)
 ```
 
-**Visual plan**: Process flow chart + before/after comparison chart.
-3-5 screenshots or relevant images, one per major step.
+**Visual plan**: 3-5 screenshots or relevant images, one per major step.
 
 **AI citation strength**: High for "how to" queries. AI systems frequently
 extract step-by-step instructions from well-structured how-to content.
@@ -164,8 +162,7 @@ H2: FAQ [FAQ]
 Conclusion (top pick + comparison table)
 ```
 
-**Visual plan**: Comparison bar chart + market share donut chart.
-Logo/screenshot per item, or grouped comparison image.
+**Visual plan**: Logo/screenshot per item, or grouped comparison image.
 
 **AI citation strength**: Very high. 50% of top AI citations are listicles
 (Onely). AI systems extract individual list items and recommendations.
@@ -181,16 +178,15 @@ E-E-A-T (demonstrates Experience) and thought leadership.
 ```
 Introduction (headline result stat)
 H2: The Challenge [ANSWER-FIRST] [STAT]
-H2: The Approach / Solution [ANSWER-FIRST] [VISUAL: timeline]
+H2: The Approach / Solution [ANSWER-FIRST] [IMAGE]
 H2: Implementation Details [INFO-GAIN: process-documentation] [IMAGE]
-H2: Results [ANSWER-FIRST] [VISUAL: before-after-bar] [STAT]
+H2: Results [ANSWER-FIRST] [IMAGE] [STAT]
 H2: Key Takeaways [INTERNAL-LINK]
 H2: FAQ [FAQ]
 Conclusion (CTA to learn more)
 ```
 
-**Visual plan**: Before/after bar chart + results timeline or line chart.
-Screenshots, dashboards, team/process photos.
+**Visual plan**: Screenshots, dashboards, team/process photos.
 
 **AI citation strength**: High for specific queries about outcomes and metrics.
 Case studies provide the exact type of original data AI cannot fabricate.
@@ -211,15 +207,14 @@ Introduction (market context stat)
 H2: Quick Comparison Table [STAT]
 H2: [Product A] Overview [ANSWER-FIRST] [IMAGE]
 H2: [Product B] Overview [ANSWER-FIRST] [IMAGE]
-H2: Feature-by-Feature Comparison [VISUAL: radar-chart]
-H2: Pricing Comparison [VISUAL: bar-chart] [STAT]
+H2: Feature-by-Feature Comparison [IMAGE]
+H2: Pricing Comparison [IMAGE] [STAT]
 H2: Which Should You Choose? [INFO-GAIN: personal-experience]
 H2: FAQ [FAQ]
 Conclusion (recommendation matrix)
 ```
 
-**Visual plan**: Feature comparison radar chart + pricing bar chart.
-Product screenshots and UI comparisons.
+**Visual plan**: Product screenshots and UI comparisons.
 
 **AI citation strength**: Very high for commercial queries. AI systems
 frequently cite comparison content when users ask "which is better."
@@ -235,18 +230,18 @@ clusters. The anchor content that supporting posts link back to.
 ```
 Introduction (scope + authority stat)
 H2: What Is [Topic]? [ANSWER-FIRST] [STAT]
-H2: Why [Topic] Matters in 2026 [ANSWER-FIRST] [VISUAL: trend-line]
+H2: Why [Topic] Matters in 2026 [ANSWER-FIRST] [IMAGE]
 H2: [Core Subtopic 1] [ANSWER-FIRST] [IMAGE] [INTERNAL-LINK]
-H2: [Core Subtopic 2] [ANSWER-FIRST] [VISUAL: bar-chart] [INTERNAL-LINK]
+H2: [Core Subtopic 2] [ANSWER-FIRST] [IMAGE] [INTERNAL-LINK]
 H2: [Core Subtopic 3] [ANSWER-FIRST] [IMAGE] [INTERNAL-LINK]
-H2: [Core Subtopic 4] [ANSWER-FIRST] [VISUAL: donut-chart]
+H2: [Core Subtopic 4] [ANSWER-FIRST] [IMAGE]
 H2: [Advanced Topic] [INFO-GAIN: expert-insight] [INTERNAL-LINK]
 H2: Tools and Resources [STAT]
 H2: FAQ [FAQ] (5-8 items -- more than standard)
 Conclusion (learning path + next steps)
 ```
 
-**Visual plan**: 3-4 charts (diverse types) + topic overview diagram.
+**Visual plan**: Topic overview diagram or infographic.
 5+ images distributed throughout.
 
 **Internal linking**: Heavy. Every subtopic H2 should link to a supporting
@@ -270,16 +265,15 @@ H2: Quick Verdict [ANSWER-FIRST]
 H2: What Is [Product]? [STAT]
 H2: Setup and First Impressions [INFO-GAIN: personal-experience] [IMAGE]
 H2: Key Features Tested [ANSWER-FIRST] [IMAGE]
-H2: Performance Results [VISUAL: benchmark-bar] [STAT]
-H2: Pricing and Value [VISUAL: pricing-comparison] [STAT]
+H2: Performance Results [IMAGE] [STAT]
+H2: Pricing and Value [IMAGE] [STAT]
 H2: Pros and Cons
 H2: Who Is This For?
 H2: FAQ [FAQ]
 Conclusion (final rating + recommendation)
 ```
 
-**Visual plan**: Performance benchmark chart + pricing comparison.
-Screenshots from actual testing (critical for E-E-A-T).
+**Visual plan**: Screenshots from actual testing (critical for E-E-A-T).
 
 **Critical requirement**: First-hand testing data. Product reviews without
 genuine hands-on experience are penalized by the December 2025 Core Update.
@@ -295,7 +289,7 @@ contrarian takes backed by data. Builds authority and attracts backlinks.
 **Structure**:
 ```
 Introduction (trend stat that sets the stage)
-H2: The Current Landscape [ANSWER-FIRST] [VISUAL: trend-line] [STAT]
+H2: The Current Landscape [ANSWER-FIRST] [IMAGE] [STAT]
 H2: What's Changing [ANSWER-FIRST] [STAT]
 H2: Why This Matters [ANSWER-FIRST] [IMAGE]
 H2: What I've Seen [INFO-GAIN: personal-experience]
@@ -305,7 +299,7 @@ H2: FAQ [FAQ]
 Conclusion (key thesis + call to action)
 ```
 
-**Visual plan**: Trend line chart + market shift chart.
+**Visual plan**: Relevant images illustrating trends and market shifts.
 
 **Differentiator**: Personal perspective and predictions are the entire value
 proposition. AI cannot replicate genuine opinions from experienced practitioners.
@@ -321,7 +315,7 @@ content that synthesizes perspectives across the industry.
 ```
 Introduction (theme + number of sources stat)
 H2: Key Finding 1 [ANSWER-FIRST] [STAT]
-H2: Key Finding 2 [ANSWER-FIRST] [VISUAL: multi-source-comparison]
+H2: Key Finding 2 [ANSWER-FIRST] [IMAGE]
 H2: Key Finding 3 [ANSWER-FIRST] [IMAGE]
 H2: Expert Perspectives [INFO-GAIN: expert-interviews]
 H2: What This Means for [Audience] [INTERNAL-LINK]
@@ -329,7 +323,7 @@ H2: FAQ [FAQ]
 Conclusion (synthesis + action items)
 ```
 
-**Visual plan**: Multi-source comparison chart + trend aggregation.
+**Visual plan**: Relevant images illustrating key findings and expert perspectives.
 
 ---
 
@@ -344,14 +338,14 @@ Introduction (what you'll build + tech stack)
 H2: Prerequisites and Setup [STAT]
 H2: Step 1 - [Foundation] [ANSWER-FIRST] [code-blocks]
 H2: Step 2 - [Core Feature] [ANSWER-FIRST] [IMAGE] [code-blocks]
-H2: Step 3 - [Integration] [ANSWER-FIRST] [VISUAL: architecture-diagram]
+H2: Step 3 - [Integration] [ANSWER-FIRST] [IMAGE]
 H2: Step 4 - [Testing/Deployment] [ANSWER-FIRST] [code-blocks]
 H2: Troubleshooting Common Issues [INFO-GAIN: personal-experience]
 H2: FAQ [FAQ]
 Conclusion (complete code repo link + extensions)
 ```
 
-**Visual plan**: Architecture diagram (SVG) + performance chart.
+**Visual plan**: Architecture diagram image.
 Terminal screenshots and UI results.
 
 **Special considerations**: Code blocks with syntax highlighting throughout.
@@ -369,14 +363,14 @@ and announcements. Speed matters -- publish within 24-48 hours.
 ```
 Introduction (the news + impact stat)
 H2: What Happened [ANSWER-FIRST] [STAT]
-H2: Why It Matters [ANSWER-FIRST] [VISUAL: impact-chart]
+H2: Why It Matters [ANSWER-FIRST] [IMAGE]
 H2: Who's Affected [ANSWER-FIRST] [IMAGE]
 H2: What to Do Now [ANSWER-FIRST] [INTERNAL-LINK]
 H2: FAQ [FAQ] (2-3 items)
 Conclusion (outlook)
 ```
 
-**Visual plan**: 1-2 charts (impact visualization). Lighter on visuals
+**Visual plan**: 1-2 images (impact visualization). Lighter on visuals
 because speed of publication is the priority.
 
 **Word count**: 800-1,500 words. Shorter format because timeliness is the
@@ -393,17 +387,17 @@ The highest-value content type for building authority and earning citations.
 ```
 Introduction (headline finding)
 H2: Methodology [ANSWER-FIRST] [STAT: sample-size]
-H2: Key Finding 1 [ANSWER-FIRST] [VISUAL: primary-data-chart] [STAT]
-H2: Key Finding 2 [ANSWER-FIRST] [VISUAL: secondary-data-chart] [STAT]
-H2: Key Finding 3 [ANSWER-FIRST] [VISUAL: comparison-chart] [STAT]
+H2: Key Finding 1 [ANSWER-FIRST] [IMAGE] [STAT]
+H2: Key Finding 2 [ANSWER-FIRST] [IMAGE] [STAT]
+H2: Key Finding 3 [ANSWER-FIRST] [IMAGE] [STAT]
 H2: Implications [ANSWER-FIRST] [INTERNAL-LINK]
 H2: Limitations [INFO-GAIN: methodology-transparency]
 H2: FAQ [FAQ]
 Conclusion (summary of findings + data access)
 ```
 
-**Visual plan**: 3-4 charts (data visualizations are central to this type).
-Charts ARE the content -- they should be the primary focus of each finding section.
+**Visual plan**: 3-4 data visualization images (central to this type).
+Data visuals ARE the content -- they should be the primary focus of each finding section.
 
 **Differentiator**: Original data is the entire value proposition. B2B SaaS
 websites conducting original research saw 25.1% average increase in top-10
@@ -425,13 +419,13 @@ H2: [Category 1] Questions
 H2: [Category 2] Questions
   H3: Question 3? [ANSWER-FIRST] [STAT]
   H3: Question 4? [ANSWER-FIRST] [STAT]
-H2: [Category 3] Questions [VISUAL: summary-chart]
+H2: [Category 3] Questions [IMAGE]
   H3: Question 5? [ANSWER-FIRST] [STAT]
   H3: Question 6? [ANSWER-FIRST] [STAT]
 Conclusion (additional resources + [INTERNAL-LINK])
 ```
 
-**Visual plan**: 1-2 summary charts. Lighter on visuals because the Q&A
+**Visual plan**: 1-2 summary images. Lighter on visuals because the Q&A
 structure itself provides the value.
 
 **Special requirements**: Every answer must contain a specific statistic.
@@ -489,7 +483,7 @@ Here is how template features map to scoring categories:
 |-----------------|------------------|-----------------|
 | Section structure & heading hierarchy | Schema & Structure | 10 pts |
 | `[ANSWER-FIRST]` markers | Answer-First Formatting | 20 pts |
-| `[VISUAL]` and `[IMAGE]` markers | Visual Elements | 15 pts |
+| `[IMAGE]` markers | Visual Elements | 15 pts |
 | `[FAQ]` zone | Schema & Structure | 4 pts |
 | `[INFO-GAIN]` markers | Content Quality | 25 pts |
 | `[STAT]` markers and citation guidance | Statistics & Citations | 20 pts |
@@ -526,7 +520,7 @@ Changes take effect immediately -- no restart needed.
 
 3. Add markers to every section:
    - `[ANSWER-FIRST]` on every H2 (non-negotiable)
-   - `[VISUAL]` or `[IMAGE]` on 60-70% of H2 sections
+   - `[IMAGE]` on 60-70% of H2 sections
    - `[INFO-GAIN]` on sections that need original perspective
    - `[STAT]` where specific data points are essential
    - `[INTERNAL-LINK]` where related content connections are natural
@@ -541,7 +535,7 @@ Changes take effect immediately -- no restart needed.
 | Practice | Why |
 |----------|-----|
 | Keep sections focused on one topic each | AI systems extract by section |
-| Place `[VISUAL]` where data naturally supports a chart | Forced visuals feel awkward |
+| Place `[IMAGE]` where data naturally supports a visual | Forced visuals feel awkward |
 | Use `[INFO-GAIN]` liberally | These sections differentiate from AI consensus |
 | Set realistic word counts | Over-padding dilutes quality scores |
 | Always include `[FAQ]` zone and conclusion | Both are scoring elements |

@@ -3,7 +3,7 @@ name: blog-brief
 description: >
   Generate detailed content briefs for blog posts with target keywords,
   content outlines, competitive analysis, recommended statistics, image and
-  chart suggestions, word count targets, internal linking architecture,
+  word count targets, internal linking architecture,
   template recommendations (12 types), TL;DR drafts, citation capsule
   planning, information gain prompts, and multi-channel distribution plans.
   Briefs are optimized for Google rankings and AI citations (GEO/AEO). Use
@@ -106,7 +106,7 @@ criteria.
 Analyze the top 3-5 ranking pages for the target keyword:
 1. **Content length** -- What's the average word count?
 2. **Heading structure** -- How many H2s? What topics do they cover?
-3. **Visual elements** -- Do competitors use charts, images, videos?
+3. **Visual elements** -- Do competitors use images, videos, infographics?
 4. **Content gaps** -- What do all competitors miss?
 5. **Freshness** -- How recently were they updated?
 6. **Schema** -- Do they use FAQ or other rich results? (Note: HowTo deprecated Sept 2023)
@@ -133,8 +133,7 @@ Find 8-12 statistics the article should include:
 1. Search: `[topic] study 2025 2026 data statistics research`
 2. Prioritize tier 1-3 sources
 3. For each stat, record: value, source, URL, date, methodology
-4. Identify 2-4 stats suitable for chart visualization
-5. Identify 1-2 stats suitable for TL;DR and social sharing
+4. Identify 1-2 stats suitable for TL;DR and social sharing
 
 ### Step 5: Generate the Brief
 
@@ -204,7 +203,6 @@ Alternative titles:
 ### H2: [Question Format] (300-400 words)
 - **Answer-first**: Open with [specific stat + source]
 - Cover: [subtopic 1], [subtopic 2]
-- **Chart**: [Type] showing [data description]
 - **Key stat**: [Specific statistic to include]
 
 [... repeat for 6-8 sections ...]
@@ -243,7 +241,6 @@ claim that can stand alone when quoted.
 | Option | Details |
 |--------|---------|
 | Photo cover | [Pixabay/Unsplash/Pexels search terms for wide hero image] |
-| Generated SVG | [Text-on-gradient concept with key stat, if data-heavy topic] |
 | Dimensions | 1200x630 (OG-compatible) |
 
 ## Social Intelligence (if bycrawl enrichment was used)
@@ -258,7 +255,7 @@ claim that can stand alone when quoted.
 ## Competitive Gaps to Exploit
 1. [What competitors miss that we should cover]
 2. [Unique angle or original data we can provide]
-3. [Format advantage -- charts/visuals competitors lack]
+3. [Format advantage -- visuals or depth competitors lack]
 
 ## Internal Link Architecture
 - **Link TO** (from this new post to existing pages):

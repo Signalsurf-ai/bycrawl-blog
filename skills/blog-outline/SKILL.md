@@ -2,7 +2,7 @@
 name: blog-outline
 description: >
   SERP-informed outline generation with H2/H3 heading hierarchy, competitive
-  content gap analysis, section-by-section word count targets, chart and image
+  content gap analysis, section-by-section word count targets, image
   placement markers, FAQ question planning, and internal linking zones. Lighter
   than a full content brief — generates article skeleton and structure only,
   ready for /blog write to consume. Use when user says "outline", "blog outline",
@@ -60,7 +60,7 @@ Use WebSearch to analyze the top 5 results for the target keyword:
 2. For each of the top 5 results, note:
    - **Heading structure** — H2/H3 topics covered
    - **Content length** — Approximate word count
-   - **Visual elements** — Charts, images, videos, infographics
+   - **Visual elements** — Images, videos, infographics
    - **FAQs** — Any FAQ sections or People Also Ask coverage
    - **Unique angles** — What makes each result distinct
    - **Gaps** — What's missing or weak
@@ -102,7 +102,6 @@ Create a structured outline with the following format:
 - **H3: [Subsection]** (if appropriate)
   - [What this subsection covers]
 - **Key statistic to find**: [What data point would strengthen this section?]
-- **Chart suggestion**: [Bar/Line/Donut/None] — [What data to visualize]
 - **Image placement**: [Yes/No] — [Description of recommended image]
 
 ### H2: [Section Title] (~300-400 words)
@@ -141,7 +140,6 @@ Guidelines for heading generation:
 - Each H2 should have a clear answer-first paragraph prompt
 - Include H3 subsections only where the topic genuinely warrants subdivision
 - Target word counts should sum to the overall post target
-- Chart type suggestions should be diverse (no two identical types)
 - Image placement markers should be distributed evenly across the post
 
 ### Step 4: Content Gaps

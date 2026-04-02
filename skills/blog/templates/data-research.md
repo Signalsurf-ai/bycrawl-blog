@@ -80,7 +80,7 @@ Do NOT use this template for:
 
 [ANSWER-FIRST] Our analysis of [N] [things] over [time period] revealed [N] key patterns.
 
-[VISUAL: horizontal-bar chart showing the top 5-7 findings ranked by magnitude or importance]
+[IMAGE] Visual showing the top 5-7 findings ranked by magnitude or importance.
 
 1. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
 2. **[Finding as a stat]:** [One sentence of context]. ([N]% of [sample])
@@ -95,7 +95,7 @@ Do NOT use this template for:
 - Each bullet must be self-contained — citable without context
 - Bold the data point, follow with one sentence of context
 - Order by magnitude of impact or surprise, not by study order
-- Include the visual chart immediately — readers want the overview first
+- Include the visual immediately — readers want the overview first
 
 ---
 
@@ -156,13 +156,7 @@ Each finding is an H2 phrased as a question. Follow this structure for each:
 
 **The data:**
 
-[VISUAL: chart appropriate to the finding — vary chart types across findings]
-
-Suggested chart types per finding:
-- Finding 1: Horizontal bar chart (comparison)
-- Finding 2: Line chart (trend over time)
-- Finding 3: Scatter plot (correlation)
-- Finding 4: Stacked bar chart (composition)
+[IMAGE] Data visualization appropriate to the finding — vary image types across findings.
 
 **What this means:** [Interpretation of the data — what pattern does this reveal?]
 
@@ -181,10 +175,10 @@ Suggested chart types per finding:
 
 **Rules for finding sections:**
 - Always open with the data point — never bury the lead
-- Each finding must have its own visualization (vary chart types)
+- Each finding must have its own visualization image
 - Compare to a benchmark or prior research for context
 - End with a practical implication — "so what?" for the reader
-- Vary chart types across findings — don't use the same chart 4 times
+- Vary image types across findings — don't use the same visual 4 times
 
 ---
 
@@ -265,7 +259,7 @@ We expected [expected result], but the data showed [actual result]. [Brief expla
 
 [INTERNAL-LINK: link to tutorial or guide content that helps implement these recommendations]
 
-[VISUAL: summary infographic or decision matrix if applicable]
+[IMAGE] Summary infographic or decision matrix if applicable.
 ```
 
 **Rules:**
@@ -351,11 +345,11 @@ Before publishing, verify:
 - [ ] Key Findings has 5-7 self-contained, citable bullet points
 - [ ] Methodology section includes sample size, time period, source, and limitations
 - [ ] At least 1 [INFO-GAIN] in methodology (proprietary data/method)
-- [ ] 4 Finding sections, each with a unique chart type
+- [ ] 4 Finding sections, each with a unique visualization image
 - [ ] Every finding opens with a specific data point (answer-first)
 - [ ] Every finding includes a benchmark comparison
 - [ ] Every finding ends with a practical implication
-- [ ] At least 4 [VISUAL] markers with varied chart types
+- [ ] At least 4 [IMAGE] markers with varied visualization types
 - [ ] At least 3 [STAT] markers with external data points
 - [ ] Surprises section includes 2+ counter-intuitive findings
 - [ ] Limitations are honestly stated

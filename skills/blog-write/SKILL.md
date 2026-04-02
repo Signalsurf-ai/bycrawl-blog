@@ -5,7 +5,7 @@ description: >
   citations. Generates full articles with template selection, answer-first
   formatting, TL;DR box, information gain markers, citation capsules, sourced
   statistics, social intelligence from bycrawl MCP, SERP analysis via Playwright,
-  Pixabay/Unsplash images, built-in SVG chart generation, FAQ schema,
+  Pixabay/Unsplash/Pexels images, FAQ schema,
   internal linking zones, and proper heading hierarchy. Supports MDX, markdown,
   and HTML output.
   Use when user says "write blog", "new blog post", "create article",
@@ -112,9 +112,6 @@ Spawn a `blog-researcher` agent (or do inline research with WebSearch):
    - **Unsplash** (alternative): Search `site:unsplash.com [topic keywords]`
      - Build URL: `https://images.unsplash.com/photo-<id>?w=1200&h=630&fit=crop&q=80`
    - **Pexels** (fallback): Search `site:pexels.com [topic keywords]`
-4. **Plan 2-4 data visualizations** from researched statistics
-   - Select diverse chart types   - Map data points to chart formats
-
 #### ByCrawl Social Research
 
 Run these enrichments automatically (details in `references/social-serp-research.md`):
@@ -139,7 +136,7 @@ Record social findings in a `## Social Intelligence` section of research notes.
 If yes, run Playwright SERP scraping (scripts in `references/social-serp-research.md`):
 
 1. **Google Trends data** — Scrape interest-over-time for the keyword (past 12 months)
-   and related/rising queries. Feed trend data into chart generation (Phase 4).
+   and related/rising queries.
 2. **SERP feature detection** — Identify: AI Overview, Featured Snippet, PAA box,
    Knowledge Panel. Adapt content format to target available features.
 3. **People Also Ask extraction** — Pull PAA questions to:
@@ -155,7 +152,6 @@ title data. Google Trends can be approximated via `WebSearch` queries.
 
 Feed SERP intelligence into:
 - Phase 3 outline (PAA → H2 headings, related searches → subtopics)
-- Phase 4 charts (Google Trends data → trend line chart)
 - Phase 5a title (competitor title patterns)
 - Phase 5l FAQ (PAA questions)
 
@@ -184,8 +180,8 @@ adapt this skeleton to match the template's section structure:
 
 ## H2: [Question Format] (300-400 words)
 - Answer-first paragraph
-- [Chart: type + data description]
 - Analysis and implications
+- [Image placement]
 - [CITATION CAPSULE placeholder]
 - [INTERNAL-LINK: anchor text → target description]
 
@@ -197,7 +193,6 @@ adapt this skeleton to match the template's section structure:
 
 ## H2: [Question Format] (300-400 words)
 - Answer-first paragraph
-- [Chart: type + data description]
 - Step-by-step guidance
 - [CITATION CAPSULE placeholder]
 - [INTERNAL-LINK: anchor text → target description]
@@ -226,7 +221,7 @@ Write the full article following these rules:
 ---
 title: "[Question-format title with primary keyword]"
 description: "[Fact-dense, 150-160 chars, includes 1 statistic]"
-coverImage: "[URL from Pixabay/Unsplash/Pexels or generated SVG path]"
+coverImage: "[URL from Pixabay/Unsplash/Pexels]"
 coverImageAlt: "[Descriptive sentence about the cover image]"
 ogImage: "[Same as coverImage, or custom OG image URL]"
 date: "YYYY-MM-DD"
@@ -376,30 +371,13 @@ MDX with Next.js Image (if detected):
 - Space evenly throughout the post (not clustered)
 - Alt text should be a full descriptive sentence
 
-#### 5j. Chart Embedding
-
-Standard markdown/HTML:
-```html
-<figure>
-  <svg viewBox="0 0 560 380" ...>...</svg>
-  <figcaption>Source: [Source Name], [Year]</figcaption>
-</figure>
-```
-
-MDX format:
-```mdx
-<figure className="chart-container" style={{margin: '2.5rem 0', textAlign: 'center', padding: '1.5rem', borderRadius: '12px'}}>
-  <svg viewBox="0 0 560 380" ...>...</svg>
-</figure>
-```
-
-#### 5k. Citation Format
+#### 5j. Citation Format
 Inline attribution (always):
 ```markdown
 Organic CTR declined 61% with AI Overviews ([Seer Interactive](https://www.seerinteractive.com/), 2025).
 ```
 
-#### 5l. FAQ Section
+#### 5k. FAQ Section
 Add 3-5 FAQ items with 40-60 word answers. Each answer must contain a statistic.
 
 For MDX with FAQSchema component:
@@ -418,12 +396,12 @@ For standard markdown:
 Answer with statistic and source attribution (40-60 words).
 ```
 
-#### 5m. Internal Linking
+#### 5l. Internal Linking
 - 5-10 internal links per 2,000-word post
 - Link to relevant existing content naturally
 - Use descriptive anchor text (not "click here")
 
-#### 5n. Social Proof Embedding (if bycrawl data available)
+#### 5m. Social Proof Embedding (if bycrawl data available)
 
 Embed real social evidence from Phase 2 research:
 
@@ -454,8 +432,7 @@ Before delivering, verify:
 1. Every H2 opens with a statistic + source
 2. No paragraph exceeds 150 words
 3. All statistics have named tier 1-3 sources
-4. 2-4 charts with type diversity
-5. 3-5 inline images with descriptive alt text
+4. 3-5 inline images with descriptive alt text
 6. Cover image present in frontmatter (coverImage + ogImage)
 7. FAQ section present with 3-5 items
 8. Heading hierarchy is clean (H1 -> H2 -> H3)
@@ -503,9 +480,8 @@ Present the completed article with a summary:
 - [N] unique sources cited
 
 ### Visual Elements
-- Cover image: [source — Pixabay/Unsplash/Pexels or generated SVG]
+- Cover image: [source — Pixabay/Unsplash/Pexels]
 - [N] inline images (Pixabay/Unsplash/Pexels)
-- [N] SVG charts (types: bar, lollipop, donut, line)
 
 ### Dual-Optimization Elements
 - TL;DR box: present (N words)

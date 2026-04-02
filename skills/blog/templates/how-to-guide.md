@@ -114,7 +114,7 @@
 
 [IMAGE] Screenshot of expected state after this step.
 
-[VISUAL: flowchart] If the process branches or has decision points at this stage, include a flowchart showing the paths.
+[IMAGE] If the process branches or has decision points at this stage, include a diagram showing the paths.
 
 ---
 
@@ -142,7 +142,7 @@
 
 [IMAGE] Screenshot showing the final completed state.
 
-[VISUAL: before-after] Side-by-side comparison showing before (Step 1) and after (Step 6) state.
+[IMAGE] Side-by-side comparison showing before (Step 1) and after (Step 6) state.
 
 **Note:** Not every guide needs exactly 6 steps. Use 4-8 steps depending on the complexity of the process. Each step should represent a meaningful, testable milestone -- not a trivial action.
 
@@ -180,7 +180,7 @@
 
 [IMAGE] Screenshot of the final successful result.
 
-[VISUAL: metrics-dashboard] If applicable, show a performance or status dashboard screenshot.
+[IMAGE] If applicable, show a performance or status dashboard screenshot.
 
 [INTERNAL-LINK] Link to an advanced guide or next-step post: "Now that you've set up [X], learn how to [optimize/scale/extend it]."
 

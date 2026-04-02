@@ -58,7 +58,6 @@ A complete blog post in the detected format (Markdown, MDX, or HTML) with:
 - Answer-first formatting on every H2 section
 - 8-12 sourced statistics from tier 1-3 sources
 - 3-5 inline images from Pixabay/Unsplash/Pexels
-- 2-4 SVG data visualization charts
 - FAQ section with 3-5 items
 - Internal linking placeholders
 
@@ -88,10 +87,9 @@ the author's voice and unique perspective.
 1. **Audit** -- Reads the file, scores it against the quality checklist
 2. **Plan** -- Presents section-by-section optimization plan for approval
 3. **Research** -- Finds replacement statistics for fabricated/unsourced data
-4. **Chart generation** -- Adds SVG charts if the post has fewer than 2
-5. **Rewrite** -- Applies answer-first formatting, fixes paragraphs, adds FAQ
-6. **Verification** -- Confirms all quality gates pass
-7. **Summary** -- Reports before/after scores and changes made
+4. **Rewrite** -- Applies answer-first formatting, fixes paragraphs, adds FAQ
+5. **Verification** -- Confirms all quality gates pass
+6. **Summary** -- Reports before/after scores and changes made
 
 ### Output
 

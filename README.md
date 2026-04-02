@@ -169,7 +169,6 @@ Every article targets both Google rankings and AI citation platforms:
 
 ### Visual Media
 - Pixabay/Unsplash/Pexels image sourcing with alt text
-- Built-in SVG chart generation (bar, grouped bar, lollipop, donut, line, area, radar)
 - Image density targets by content type
 - Image URL verification (HTTP 200 check before embedding)
 

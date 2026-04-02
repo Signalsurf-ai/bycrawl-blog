@@ -212,7 +212,7 @@ Do NOT use this template for:
 
 [INTERNAL-LINK: link to your strategy or trend-analysis content that covers the broader context]
 
-[VISUAL: timeline showing this event in context of related events, if applicable]
+[IMAGE] Timeline showing this event in context of related events, if applicable.
 ```
 
 **Rules:**

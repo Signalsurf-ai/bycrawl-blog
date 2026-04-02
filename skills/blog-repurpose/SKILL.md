@@ -188,7 +188,7 @@ Reframe the blog content as an authentic community discussion:
 - Never use clickbait or misleading titles
 - Provide genuine value in the post itself — readers should benefit without
   clicking through
-- Include the blog link naturally at the end: "Full analysis with charts: [link]"
+- Include the blog link naturally at the end: "Full analysis with data: [link]"
 
 **Tone:** Peer-to-peer, humble, discussion-oriented. Never salesy.
 

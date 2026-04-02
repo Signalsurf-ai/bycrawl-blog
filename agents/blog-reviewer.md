@@ -163,4 +163,4 @@ When reviewing citations, verify against this tier system:
 - Be actionable: every issue must have a concrete fix
 - Be honest: do not inflate scores — a 75 that deserves a 75 is more helpful than a generous 85
 - Score content you cannot check (page speed, mobile) as N/A and note it
-- Count exact statistics, images, charts, headings — do not estimate
+- Count exact statistics, images, headings — do not estimate

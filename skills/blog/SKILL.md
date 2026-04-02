@@ -6,7 +6,7 @@ description: >
   (December 2025 Core Update, E-E-A-T) and AI citations (GEO/AEO). Writes,
   rewrites, analyzes, outlines, audits, and repurposes blog content with
   answer-first formatting, sourced statistics, Pixabay/Unsplash/Pexels images,
-  built-in SVG chart generation, JSON-LD schema generation, and freshness signals.
+  JSON-LD schema generation, and freshness signals.
   Supports any platform (WordPress, Next.js MDX, Hugo, Ghost, Astro, Jekyll,
   11ty, Gatsby, HTML). Use when user says "blog", "write blog", "blog post",
   "blog strategy", "content brief", "editorial calendar", "analyze blog",
@@ -109,7 +109,7 @@ Every blog post targets these 6 optimization pillars:
 |--------|--------|---------------|
 | Answer-First Formatting | +340% AI citations | Every H2 opens with 40-60 word stat-rich paragraph |
 | Real Sourced Data | E-E-A-T trust | Tier 1-3 sources only, inline attribution |
-| Visual Media | Engagement + citations | Pixabay/Unsplash images + built-in SVG chart generation |
+| Visual Media | Engagement + citations | Pixabay/Unsplash/Pexels images |
 | FAQ Schema | +28% AI citations | Structured FAQ with 40-60 word answers |
 | Content Structure | AI extractability | 50-150 word chunks, question headings, proper H hierarchy |
 | Freshness Signals | 76% of top citations | Updated within 30 days, dateModified schema |
@@ -126,7 +126,6 @@ These are hard rules. Never ship content that violates them:
 | Source tier | Tier 1-3 only | Never cite content mills or affiliate sites |
 | Image alt text | Required on all images | Descriptive, includes topic keywords naturally |
 | Self-promotion | Max 1 brand mention | Author bio context only |
-| Chart diversity | No duplicate types | Each chart must be a different type |
 
 ## Scoring Methodology
 
@@ -252,8 +251,6 @@ For `/blog audit`, step 6 runs in parallel across all posts in the directory.
 
 ## Integration
 
-Chart generation is built-in — no external dependencies required for full functionality.
-
 **ByCrawl MCP** (optional, enhances all sub-skills):
 - Requires `@bycrawl/mcp` configured in `.mcp.json` with a valid API key
 - Social signals correlate 3x more with AI visibility than backlinks
@@ -280,7 +277,6 @@ Chart generation is built-in — no external dependencies required for full func
 | Anti-Pattern | Why |
 |-------------|-----|
 | Fabricate statistics | December 2025 Core Update penalizes unsourced claims |
-| Use the same chart type twice | Visual monotony, reduces engagement |
 | Keyword-stuff headings or meta | Google ignores/penalizes this |
 | Bury answers in paragraphs | AI systems extract from section openers |
 | Skip source verification | Broken links and wrong data destroy trust |

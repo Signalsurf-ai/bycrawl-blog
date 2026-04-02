@@ -61,68 +61,6 @@ const nextConfig = {
 
 Without these entries, `next/image` will reject external image URLs at build time.
 
-### Chart / SVG Embedding (JSX-Compatible)
-
-All SVG attributes must use camelCase in MDX files. HTML-style attributes
-cause compilation errors.
-
-```mdx
-<figure className="chart-container" style={{margin: '2.5rem 0', textAlign: 'center', padding: '1.5rem', borderRadius: '12px'}}>
-  <svg
-    viewBox="0 0 560 380"
-    style={{maxWidth: '100%', height: 'auto', fontFamily: "'Inter', system-ui, sans-serif"}}
-    role="img"
-    aria-label="Chart showing 61% CTR decline with AI Overviews"
-  >
-    <title>Organic CTR Impact</title>
-    <desc>Bar chart comparing organic CTR before and after AI Overviews</desc>
-    <text x="280" y="30" textAnchor="middle" fontSize="16" fontWeight="700" fill="currentColor">
-      Organic CTR Decline
-    </text>
-    <rect x="100" y="60" width="160" height="200" rx="6" fill="#f97316" />
-    <text x="180" y="170" textAnchor="middle" fontSize="14" fontWeight="800" fill="white">
-      1.76%
-    </text>
-    <rect x="300" y="180" width="160" height="80" rx="6" fill="#38bdf8" />
-    <text x="380" y="225" textAnchor="middle" fontSize="14" fontWeight="800" fill="white">
-      0.61%
-    </text>
-    <text x="280" y="372" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.35">
-      Source: Seer Interactive (2025)
-    </text>
-  </svg>
-</figure>
-```
-
-**JSX attribute conversion reference:**
-
-| HTML Attribute | JSX Attribute |
-|----------------|---------------|
-| `stroke-width` | `strokeWidth` |
-| `stroke-dasharray` | `strokeDasharray` |
-| `stroke-linecap` | `strokeLinecap` |
-| `text-anchor` | `textAnchor` |
-| `font-size` | `fontSize` |
-| `font-weight` | `fontWeight` |
-| `font-family` | `fontFamily` |
-| `class` | `className` |
-| `style="..."` | `style={{...}}` |
-| `fill-opacity` | `fillOpacity` |
-| `stop-color` | `stopColor` |
-| `clip-path` | `clipPath` |
-
-### MDX Component Imports for Custom Charts
-```mdx
-import { BarChart } from '@/components/charts/BarChart'
-import { FAQSchema } from '@/components/FAQSchema'
-
-<BarChart data={chartData} title="Organic CTR Decline" />
-<FAQSchema faqs={[{ question: "...", answer: "..." }]} />
-```
-
-Check the project's `components/` directory for available chart components
-before inlining SVG. Use project components when they exist.
-
 ### generateStaticParams for SSG (Critical for AI Crawlers)
 
 AI crawlers (GPTBot, ClaudeBot, PerplexityBot) cannot execute JavaScript.
@@ -233,33 +171,8 @@ export default defineConfig({
 })
 ```
 
-### Chart / SVG Embedding
-
-Standard SVG works directly in `.md` files. For `.astro` component wrappers:
-
-```astro
----
-// src/components/Chart.astro
-const { title, ariaLabel } = Astro.props
----
-<figure class="chart-container">
-  <slot />
-  <figcaption>{title}</figcaption>
-</figure>
-```
-
-Use standard HTML attributes (not camelCase) in `.astro` and `.md` files:
-```html
-<svg viewBox="0 0 560 380" role="img" aria-label="CTR decline chart">
-  <text x="280" y="30" text-anchor="middle" font-size="16" fill="currentColor">
-    Chart Title
-  </text>
-</svg>
-```
-
 ### Key Configuration Notes
 - Static output by default (SSG) -- ideal for AI crawlers without JS execution
-- Markdown files support raw HTML/SVG natively (no unsafe config needed)
 - For MDX support: add `@astrojs/mdx` integration
 - Sitemap: add `@astrojs/sitemap` integration with `site` config
 - RSS: add `@astrojs/rss` for feed generation
@@ -326,41 +239,6 @@ Configure in `hugo.toml`:
 
 Hugo processes images from `static/images/` or page bundles (`content/blog/post-name/images/`).
 
-### Chart / SVG Embedding via Shortcodes
-
-Create a custom shortcode for inline SVG:
-
-```html
-<!-- layouts/shortcodes/chart.html -->
-<figure class="chart-container" style="margin: 2.5rem 0; text-align: center;">
-  {{ .Inner | safeHTML }}
-  {{ with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
-</figure>
-```
-
-Usage in markdown:
-```markdown
-{{< chart caption="Source: Seer Interactive (2025)" >}}
-<svg viewBox="0 0 560 380" role="img" aria-label="CTR decline chart">
-  <!-- SVG content -->
-</svg>
-{{< /chart >}}
-```
-
-### Goldmark Renderer Config (Required for SVG)
-
-Hugo's default Goldmark renderer escapes raw HTML. Enable unsafe rendering
-for inline SVG:
-
-```toml
-# hugo.toml
-[markup.goldmark.renderer]
-  unsafe = true
-```
-
-Without this setting, all `<svg>`, `<figure>`, and other HTML tags in
-markdown files will be stripped from the output.
-
 ### Custom Archetypes
 ```markdown
 <!-- archetypes/blog.md -->
@@ -422,21 +300,6 @@ Jekyll will not process files that do not follow this naming pattern.
 ```
 
 Images live in `assets/images/` or `images/` depending on project convention.
-
-### Chart / SVG Embedding
-
-Jekyll uses the kramdown renderer, which passes through raw HTML:
-
-```markdown
-<figure>
-  <svg viewBox="0 0 560 380" role="img" aria-label="CTR decline chart">
-    <!-- SVG content with standard HTML attributes -->
-  </svg>
-  <figcaption>Source: Seer Interactive (2025)</figcaption>
-</figure>
-```
-
-No special configuration needed -- kramdown does not strip HTML by default.
 
 ### Liquid Templates
 
@@ -506,7 +369,7 @@ Gutenberg uses block-based editing. Key blocks for blog content:
 | Paragraph | Body text | Each paragraph auto-wraps in `<p>` |
 | Heading | H2-H6 | Set level in block toolbar |
 | Image | Photos | Set alt text, caption, link in sidebar |
-| Custom HTML | SVG charts | Paste raw SVG in HTML block |
+| Custom HTML | Raw HTML content | Paste raw HTML in block |
 | List | Bullets/numbers | For FAQ answers, step lists |
 | Quote | Blockquotes | For expert quotes with attribution |
 | Table | Comparison tables | For feature/pricing comparisons |
@@ -535,16 +398,6 @@ Upload via Media Library, then insert. Set these fields:
 - **Title**: Short descriptive title
 - **Caption**: Optional, shows below image
 - **Featured Image**: Set in post sidebar (used as OG image and blog listing)
-
-### Chart / SVG Embedding
-Use the Custom HTML block:
-```html
-<figure class="wp-block-html chart-container">
-  <svg viewBox="0 0 560 380" role="img" aria-label="Chart description">
-    <!-- Standard SVG with HTML attributes -->
-  </svg>
-</figure>
-```
 
 ### Yoast SEO / RankMath Integration
 
@@ -625,16 +478,6 @@ In the Ghost editor, use the Image card. For HTML content:
        alt="Marketing team analyzing AI search data"
        loading="lazy">
   <figcaption>Photo via Pixabay</figcaption>
-</figure>
-```
-
-### Chart / SVG Embedding
-Use the HTML card in the Ghost editor to paste raw SVG:
-```html
-<figure class="kg-card kg-html-card">
-  <svg viewBox="0 0 560 380" role="img" aria-label="Chart description">
-    <!-- Standard SVG -->
-  </svg>
 </figure>
 ```
 
@@ -743,19 +586,6 @@ For optimized images, use `eleventy-img` plugin:
 {% image "src/images/search-dashboard.jpg", "Marketing team analyzing search data" %}
 ```
 
-### Chart / SVG Embedding
-Raw HTML/SVG works directly in markdown files. 11ty passes through HTML
-without stripping.
-
-```markdown
-<figure>
-  <svg viewBox="0 0 560 380" role="img" aria-label="CTR decline chart">
-    <!-- SVG content -->
-  </svg>
-  <figcaption>Source: Seer Interactive (2025)</figcaption>
-</figure>
-```
-
 ### Computed Data for Dates and URLs
 ```javascript
 // blog/blog.11tydata.js
@@ -847,18 +677,6 @@ const BlogPost = ({ data }) => {
     />
   )
 }
-```
-
-### Chart / SVG Embedding
-In MDX files, use JSX-compatible SVG (same camelCase rules as Next.js):
-```mdx
-<figure style={{margin: '2.5rem 0', textAlign: 'center'}}>
-  <svg viewBox="0 0 560 380" role="img" aria-label="CTR chart">
-    <text x="280" y="30" textAnchor="middle" fontSize="16" fill="currentColor">
-      Chart Title
-    </text>
-  </svg>
-</figure>
 ```
 
 ### GraphQL Data Layer
@@ -1024,21 +842,6 @@ exports.createPages = async ({ graphql, actions }) => {
        loading="lazy"
        decoding="async">
   <figcaption>Photo via Pixabay</figcaption>
-</figure>
-```
-
-### Chart / SVG Embedding
-```html
-<figure>
-  <svg viewBox="0 0 560 380"
-       style="max-width: 100%; height: auto; font-family: 'Inter', system-ui, sans-serif"
-       role="img"
-       aria-label="Chart showing 61% CTR decline">
-    <title>Organic CTR Decline with AI Overviews</title>
-    <desc>Bar chart comparing 1.76% organic CTR before to 0.61% after AI Overviews</desc>
-    <!-- SVG content with standard HTML attributes -->
-  </svg>
-  <figcaption>Source: Seer Interactive (2025)</figcaption>
 </figure>
 ```
 

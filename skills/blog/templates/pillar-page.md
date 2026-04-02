@@ -102,7 +102,7 @@ Auto-generated from H2 headings. Use anchor links for jump navigation. This impr
 4. **Common misconceptions** (1-2 sentences): Address what this topic is NOT to prevent confusion
 5. **Brief history or evolution** (2-3 sentences): How the topic has developed to its current state
 
-[VISUAL: chart-type] Include a diagram or infographic showing the key components and how they relate to each other. Suggested: labeled diagram, flowchart, or concept map.
+[IMAGE] Include a diagram or infographic showing the key components and how they relate to each other. Suggested: labeled diagram, flowchart, or concept map.
 
 [STAT: definition-supporting data point] Include at least one data point that contextualizes the topic's scope or importance.
 
@@ -123,7 +123,7 @@ Auto-generated from H2 headings. Use anchor links for jump navigation. This impr
 4. **Opportunity framing** (2-3 sentences): What is possible if you get this right?
 5. **Who this affects** (1-2 sentences): Specific roles, industries, or use cases
 
-[VISUAL: chart-type] Bar chart or line graph showing growth trend, adoption curve, or impact data over time.
+[IMAGE] Image showing growth trend, adoption curve, or impact data over time.
 
 [INFO-GAIN: unique analysis] Include a data point or trend observation that is not commonly cited — something from your own research or analysis.
 
@@ -297,7 +297,7 @@ List all supporting articles in the topic cluster, organized by category:
 - [ ] Total word count is 3,000-4,000 words
 - [ ] All [ANSWER-FIRST] prompts have been fulfilled — every section leads with the answer
 - [ ] All [STAT] markers replaced with real, cited statistics (with source and year)
-- [ ] All [VISUAL] markers replaced with actual charts or diagrams
+- [ ] All [IMAGE] markers replaced with actual images or diagrams
 - [ ] All [IMAGE] markers replaced with relevant, optimized images with alt text
 - [ ] All [INFO-GAIN] markers replaced with original data, experience, or insight
 - [ ] All [INTERNAL-LINK] zones populated with real links to supporting articles

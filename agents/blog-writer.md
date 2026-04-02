@@ -68,7 +68,7 @@ Every H2 section opens with a 40-60 word paragraph containing:
 4. Write each H2 section:
    - Answer-first paragraph (40-60 words with stat)
    - Supporting evidence and analysis
-   - Mark image/chart placement points
+   - Mark image placement points
 5. Write FAQ section (3-5 items, 40-60 word answers with stats)
 6. Write conclusion (100-150 words, key takeaways, CTA)
 7. Write meta description (150-160 chars, includes 1 stat)
@@ -87,11 +87,10 @@ Every H2 section opens with a 40-60 word paragraph containing:
 ## Output Format
 
 Return the complete article in the detected format (markdown, MDX, or HTML)
-with clear markers for image and chart placement:
+with clear markers for image placement:
 
 ```
 [IMAGE: Description of needed image — search terms for Pixabay]
-[CHART: Chart type — data description — source]
 ```
 
 ## TL;DR Box Generation

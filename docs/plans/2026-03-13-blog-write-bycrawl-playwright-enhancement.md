@@ -282,7 +282,7 @@ description: >
   citations. Generates full articles with template selection, answer-first
   formatting, TL;DR box, information gain markers, citation capsules, sourced
   statistics, social intelligence from bycrawl MCP, SERP analysis via Playwright,
-  Pixabay/Unsplash images, built-in SVG chart generation, FAQ schema,
+  Pixabay/Unsplash images, FAQ schema,
   internal linking zones, and proper heading hierarchy. Supports MDX, markdown,
   and HTML output.
   Use when user says "write blog", "new blog post", "create article",

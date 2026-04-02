@@ -72,7 +72,7 @@ After finding each candidate image URL:
 1. Search for the target keyword
 2. Analyze top 3-5 results for:
    - Word count (approximate)
-   - Number of images and charts
+   - Number of images
    - Heading structure
    - Unique insights vs generic content
    - Freshness (last updated date)
@@ -99,12 +99,9 @@ Return structured findings:
 
 ### Competitive Analysis
 
-| Competitor | Word Count | Images | Charts | Freshness | Gap |
-|-----------|-----------|--------|--------|-----------|-----|
-| [url] | ~[N] | [N] | [N] | [date] | [gap] |
-
-### Recommended Chart Data
-[2-4 data sets suitable for visualization with chart type suggestions]
+| Competitor | Word Count | Images | Freshness | Gap |
+|-----------|-----------|--------|-----------|-----|
+| [url] | ~[N] | [N] | [date] | [gap] |
 ```
 
 ## Cover Image Search

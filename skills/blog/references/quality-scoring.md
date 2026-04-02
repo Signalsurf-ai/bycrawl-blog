@@ -94,7 +94,6 @@ When reporting issues, classify by priority:
 - AI trigger words > 8 per 1,000
 
 ### Medium Priority
-- Fewer than 2 charts
 - Fewer than 3 images
 - Tier 4-5 sources present
 - Self-promotion > 1 mention
@@ -108,7 +107,6 @@ When reporting issues, classify by priority:
 ### Low Priority
 - Paragraph length slightly above 80 words (but under 150)
 - Non-question H2 headings above 40%
-- Missing chart type diversity
 - Images without alt text
 - Missing external links to tier 1-3 sources
 - Entity terminology inconsistency
@@ -147,7 +145,6 @@ These can be detected programmatically:
 ### Technical Elements
 22. Image count (regex for `!\[` or `<img`)
 23. Image alt text presence (images without alt attribute)
-24. Chart count (regex for `<svg` or `<figure`)
 25. Schema presence (search for structured data markers)
 26. OG meta tags (frontmatter `ogImage`, `coverImage`)
 27. `loading="lazy"` on first image (flag as LCP issue)

@@ -316,7 +316,7 @@ Structure:
   H2: FAQ (3-5 items)
   Conclusion (complete code repo link + extensions)
 
-Visuals: Architecture diagram (SVG), performance chart
+Visuals: Architecture diagram, performance comparison
 Images: Terminal screenshots, UI results
 Special: Code blocks with syntax highlighting throughout
 ```

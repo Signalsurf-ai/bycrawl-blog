@@ -71,9 +71,7 @@
 
 ### Quick Comparison Table (H2)
 
-[VISUAL: comparison-table]
-
-**Format:** A comprehensive feature matrix as a markdown table, placed early in the post for scanners.
+[IMAGE] A comprehensive feature matrix as a markdown table, placed early in the post for scanners.
 
 **Required rows (adapt to your category):**
 
@@ -196,7 +194,7 @@
 4. **Hidden costs** (1-2 sentences): Any costs not immediately obvious -- migration effort, required add-ons, lock-in implications.
 5. **Value verdict** (bold, 1 sentence): Which provides better value and for whom.
 
-[VISUAL: pricing-comparison-table] A simple table showing pricing tiers side by side.
+[IMAGE] A simple table showing pricing tiers side by side.
 
 | Tier | [Product A] | [Product B] |
 |------|-------------|-------------|

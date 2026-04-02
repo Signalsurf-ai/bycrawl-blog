@@ -136,9 +136,7 @@
 
 ### Comparison Table (Feature Matrix)
 
-[VISUAL: comparison-table]
-
-**Format:** A markdown table comparing all items across 5-7 key dimensions.
+[IMAGE] A markdown table comparing all items across 5-7 key dimensions.
 
 **Required columns:**
 | Tool | Best For | Pricing | [Key Metric 1] | [Key Metric 2] | [Key Metric 3] | Rating |
